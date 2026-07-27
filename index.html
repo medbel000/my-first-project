@@ -31,6 +31,11 @@
             font-size: 2.2rem;
             margin-bottom: 20px;
         }
+        h2 {
+            color: #0369a1;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
         p {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -48,6 +53,30 @@
             border: 1px solid #bbf7d0;
             margin-bottom: 20px;
         }
+        .btn {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+            font-family: inherit;
+        }
+        .btn:hover {
+            background-color: #0369a1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(2, 132, 199, 0.3);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
         .footer {
             font-size: 0.85rem;
             color: #94a3b8;
@@ -61,7 +90,9 @@
     <div class="container">
         <span class="badge">🚀 البداية الجديدة</span>
         <h1>مرحباً بكم في مشروعي الأول!</h1>
+        <h2>مرحباً بمشروعي الأول</h2>
         <p>هذا هو مشروعي البرمجي الأول على الإطلاق، حيث أخطو خطواتي الأولى والمثيرة في عالم تطوير مواقع الويب. قمت بتصميم هذه الصفحة البسيطة لأرحب بكم وأشارككم انطلاقتي في هذا المجال الرائع.</p>
+        <button class="btn" onclick="alert('أهلاً بك! يسعدني جداً تواصلك معي في مشروعي الأول. ❤️')">مرحباً بك</button>
         <div class="footer">
             تم التطوير بكل حب ❤️ | 2026
         </div>
