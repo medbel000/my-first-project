@@ -273,7 +273,7 @@ p {
     }
 }
 
-/* تجاوب الزر مع الشاشات الصغيرة للهواتف لضمان عدم التداخل */
+    /* تجاوب الزر مع الشاشات الصغيرة للهواتف لضمان عدم التداخل */
 @media (max-width: 768px) {
     .whatsapp-float {
         width: 50px;
@@ -284,5 +284,60 @@ p {
     .whatsapp-float svg {
         width: 24px;
         height: 24px;
+    }
+}
+
+/* زر العودة إلى الأعلى */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: #0369a1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(2, 132, 199, 0.4);
+}
+
+/* عند تفعيل ظهور الزر */
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ألوان الوضع الداكن لزر العودة للأعلى */
+body.dark-theme .back-to-top-btn {
+    background-color: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .back-to-top-btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* تجاوب الزر مع الشاشات الصغيرة للهواتف */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        left: 20px;
     }
 }
