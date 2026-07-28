@@ -23,37 +23,76 @@
         <p>هذا هو مشروعي البرمجي الأول على الإطلاق، حيث أخطو خطواتي الأولى والمثيرة في عالم تطوير مواقع الويب. قمت بتصميم هذه الصفحة البسيطة لأرحب بكم وأشارككم انطلاقتي في هذا المجال الرائع.</p>
         <button id="welcome-btn" class="btn">مرحباً بك</button>
 
-        <!-- قسم آراء العملاء -->
-        <div class="reviews-section">
-            <h3>آراء العملاء</h3>
+<!-- قسم آراء العملاء -->
+        <div class="reviews-section" aria-labelledby="reviews-title">
+            <h3 id="reviews-title">آراء العملاء</h3>
             <div class="reviews-container">
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="customer-name">محمد أحمد</span>
-                        <span class="rating">★★★★★</span>
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/80?text=%D9%85" alt="صورة محمد أحمد">
                     </div>
-                    <p class="review-text">موقع ممتاز وتصميم رائع ومريح جداً للعين، بالتوفيق في مشروعك الأول!</p>
+                    <div class="card-body">
+                        <div class="review-header">
+                            <div class="customer-info">
+                                <span class="customer-name">محمد أحمد</span>
+                                <span class="customer-city">المغرب</span>
+                                <span class="verified" title="موثّق" aria-hidden="true">✔</span>
+                            </div>
+                            <div class="rating" aria-label="5 نجوم">★★★★★</div>
+                        </div>
+                        <p class="review-text">موقع ممتاز وتصميم رائع ومريح جداً للعين، بالتوفيق في مشروعك الأول!</p>
+                    </div>
                 </div>
+
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="customer-name">سارة علي</span>
-                        <span class="rating">★★★★★</span>
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/80?text=%D8%B3" alt="صورة سارة علي">
                     </div>
-                    <p class="review-text">عمل احترافي وجميل جداً، خاصة ميزة التبديل بين الوضع المضيء والداكن.</p>
+                    <div class="card-body">
+                        <div class="review-header">
+                            <div class="customer-info">
+                                <span class="customer-name">سارة علي</span>
+                                <span class="customer-city">المغرب</span>
+                                <span class="verified" title="موثّق" aria-hidden="true">✔</span>
+                            </div>
+                            <div class="rating" aria-label="5 نجوم">★★★★★</div>
+                        </div>
+                        <p class="review-text">عمل احترافي وجميل جداً، خاصة ميزة التبديل بين الوضع المضيء والداكن.</p>
+                    </div>
                 </div>
+
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="customer-name">خالد عمر</span>
-                        <span class="rating">★★★★★</span>
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/80?text=%D8%AE" alt="صورة خالد عمر">
                     </div>
-                    <p class="review-text">بسيط، أنيق وسريع الاستجابة. رائع جداً كبداية لمطور واعد.</p>
+                    <div class="card-body">
+                        <div class="review-header">
+                            <div class="customer-info">
+                                <span class="customer-name">خالد عمر</span>
+                                <span class="customer-city">المغرب</span>
+                                <span class="verified" title="موثّق" aria-hidden="true">✔</span>
+                            </div>
+                            <div class="rating" aria-label="5 نجوم">★★★★★</div>
+                        </div>
+                        <p class="review-text">بسيط، أنيق وسريع الاستجابة. رائع جداً كبداية لمطور واعد.</p>
+                    </div>
                 </div>
+
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="customer-name">فاطمة حسن</span>
-                        <span class="rating">★★★★★</span>
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/80?text=%D9%81" alt="صورة فاطمة حسن">
                     </div>
-                    <p class="review-text">أعجبني زر الواتساب العائم وسهولة التواصل. تجربة مستخدم رائعة!</p>
+                    <div class="card-body">
+                        <div class="review-header">
+                            <div class="customer-info">
+                                <span class="customer-name">فاطمة حسن</span>
+                                <span class="customer-city">المغرب</span>
+                                <span class="verified" title="موثّق" aria-hidden="true">✔</span>
+                            </div>
+                            <div class="rating" aria-label="5 نجوم">★★★★★</div>
+                        </div>
+                        <p class="review-text">أعجبني زر الواتساب العائم وسهولة التواصل. تجربة مستخدم رائعة!</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,11 +112,23 @@
             </div>
         </div>
 
-        <!-- قسم سياسة الخصوصية -->
+<!-- قسم سياسة الخصوصية -->
         <div class="privacy-section">
             <h3>سياسة الخصوصية</h3>
-            <div class="privacy-content">
-                <p class="privacy-text">نحن نحترم خصوصيتك تماماً. في مشروعنا الأول، لا نقوم بجمع أو تخزين أي بيانات شخصية خاصة بالزوار. أي معلومات يتم مشاركتها معنا عبر البريد الإلكتروني أو واتساب تظل سرية وآمنة وتُستخدم فقط للتواصل المباشر معك.</p>
+            <div class="privacy-actions">
+                <button id="privacy-btn" class="btn privacy-btn" aria-haspopup="dialog" aria-controls="privacy-modal">اطلع على سياسة الخصوصية</button>
+            </div>
+
+            <!-- Modal: سياسة الخصوصية -->
+            <div id="privacy-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+                <div class="modal-overlay" data-close="true"></div>
+                <div class="modal-content" role="document">
+                    <button class="modal-close" aria-label="إغلاق">×</button>
+                    <h2 id="privacy-title">سياسة الخصوصية</h2>
+                    <div class="modal-body">
+                        <p class="privacy-text">نحن نحترم خصوصيتك تماماً. في مشروعنا الأول، لا نقوم بجمع أو تخزين أي بيانات شخصية خاصة بالزوار. أي معلومات يتم مشاركتها معنا عبر البريد الإلكتروني أو واتساب تظل سرية وآمنة وتُستخدم فقط للتواصل المباشر معك.</p>
+                    </div>
+                </div>
             </div>
         </div>
 

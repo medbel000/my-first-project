@@ -342,7 +342,7 @@ body.dark-theme .back-to-top-btn:hover {
     }
 }
 
-/* قسم آراء العملاء الجديد */
+/* قسم آراء العملاء المحسّن */
 .reviews-section {
     margin-top: 30px;
     border-top: 1px solid #f1f5f9;
@@ -356,7 +356,7 @@ body.dark-theme .reviews-section {
 .reviews-section h3 {
     font-size: 1.3rem;
     color: #0369a1;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     margin-top: 0;
 }
 
@@ -364,19 +364,26 @@ body.dark-theme .reviews-section h3 {
     color: #0ea5e9;
 }
 
+/* Responsive grid: 1 column (mobile), 2 (tablet), 3 (desktop) */
 .reviews-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
     text-align: right;
 }
 
+/* Card */
 .review-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 14px;
+    padding: 14px;
     text-align: right;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    overflow: hidden;
 }
 
 body.dark-theme .review-card {
@@ -384,53 +391,136 @@ body.dark-theme .review-card {
     border-color: #334155;
 }
 
-.review-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+/* Avatar */
+.avatar {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(2,132,199,0.08);
+    background: linear-gradient(135deg, rgba(2,132,199,0.06), rgba(3,105,161,0.03));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-body.dark-theme .review-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
+/* Card body holds text */
+.card-body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Header inside card: name, city, badge and rating */
 .review-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     margin-bottom: 8px;
-    gap: 10px;
-    flex-wrap: wrap;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    direction: rtl;
 }
 
 .customer-name {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1rem;
     color: #1e293b;
 }
 
-body.dark-theme .customer-name {
-    color: #cbd5e1;
+.customer-city {
+    font-size: 0.85rem;
+    color: #64748b;
+    background: transparent;
 }
 
+.verified {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6fffa;
+    color: #059669;
+    border-radius: 8px;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 6px rgba(4,120,87,0.04);
+}
+
+/* Gold stars — keep same glyphs but style */
 .rating {
-    color: #f59e0b;
-    font-size: 1rem;
+    color: #b45309; /* deep gold */
+    font-size: 1.05rem;
     letter-spacing: 2px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 }
 
+/* Review text */
 .review-text {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #475569;
-    margin: 0 !important; /* Overriding possible general paragraph margins */
+    margin: 0 !important;
     text-align: right;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* show up to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
+/* show full text on hover (desktop) */
+.review-card:hover .review-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+
+/* Hover effects */
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(2,132,199,0.08);
+}
+
+body.dark-theme .customer-name,
+body.dark-theme .customer-city,
 body.dark-theme .review-text {
     color: #cbd5e1;
 }
 
-/* قسم سياسة الخصوصية الجديد */
+/* Responsive breakpoints */
+@media (min-width: 600px) {
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+    .reviews-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Accessibility: focus state */
+.review-card:focus-within {
+    outline: 3px solid rgba(2,132,199,0.12);
+    outline-offset: 4px;
+}
+
+/* ---------------------------------------------------------
+   قسم سياسة الخصوصية والمودال
+   --------------------------------------------------------- */
 .privacy-section {
     margin-top: 30px;
     border-top: 1px solid #f1f5f9;
@@ -452,19 +542,107 @@ body.dark-theme .privacy-section h3 {
     color: #0ea5e9;
 }
 
-.privacy-content {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
+.privacy-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+/* Privacy button */
+.privacy-btn {
+    background: linear-gradient(90deg, #0284c7, #0369a1);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(2,132,199,0.2);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.privacy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(2,132,199,0.24);
+}
+
+/* Modal base (hidden) */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 240ms ease;
+}
+
+/* when open */
+.modal.open {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* overlay */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(2,6,23,0.45);
+    backdrop-filter: blur(4px);
+    transition: background 200ms ease;
+}
+
+/* modal content */
+.modal-content {
+    position: relative;
+    background: #fff;
+    color: #0f172a;
+    width: 92%;
+    max-width: 720px;
     border-radius: 12px;
-    padding: 15px;
-    text-align: justify;
+    padding: 20px 22px;
+    box-shadow: 0 20px 60px rgba(2,132,199,0.12);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 260ms ease, opacity 260ms ease;
+    z-index: 2;
+    text-align: right;
 }
 
-body.dark-theme .privacy-content {
-    background-color: #0f172a;
-    border-color: #334155;
+/* when modal open, animate content in */
+.modal.open .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }
 
+/* modal dark theme */
+body.dark-theme .modal-content {
+    background: #0b1220;
+    color: #cbd5e1;
+    border: 1px solid #263244;
+}
+
+/* close button */
+.modal-close {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* modal body */
+.modal-body {
+    margin-top: 8px;
+    max-height: 60vh;
+    overflow: auto;
+    line-height: 1.7;
+    color: inherit;
+}
+
+/* privacy text inside modal */
 .privacy-text {
     font-size: 0.95rem;
     line-height: 1.7;
@@ -475,3 +653,10 @@ body.dark-theme .privacy-content {
 body.dark-theme .privacy-text {
     color: #cbd5e1;
 }
+
+/* small screens */
+@media (max-width: 480px) {
+    .modal-content { padding: 16px; border-radius: 10px; }
+    .avatar { width: 60px; height: 60px; flex: 0 0 60px; }
+}
+
