@@ -150,7 +150,7 @@ body.dark-theme .contact-link.github:hover {
 }
 
 /* تأثير انتقال سلس لكامل الصفحة */
-body, .container, h1, h2, p, .badge, .theme-toggle-btn, .contact-section, .contact-link {
+body, .container, h1, h2, p, .badge, .theme-toggle-btn, .contact-section, .contact-link, .reviews-section, .review-card, .customer-name, .review-text, .privacy-section, .privacy-content, .privacy-text {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 .container {
@@ -340,4 +340,138 @@ body.dark-theme .back-to-top-btn:hover {
         bottom: 20px;
         left: 20px;
     }
+}
+
+/* قسم آراء العملاء الجديد */
+.reviews-section {
+    margin-top: 30px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+body.dark-theme .reviews-section {
+    border-top-color: #334155;
+}
+
+.reviews-section h3 {
+    font-size: 1.3rem;
+    color: #0369a1;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+body.dark-theme .reviews-section h3 {
+    color: #0ea5e9;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+}
+
+.review-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: right;
+}
+
+body.dark-theme .review-card {
+    background-color: #0f172a;
+    border-color: #334155;
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme .review-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.customer-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #1e293b;
+}
+
+body.dark-theme .customer-name {
+    color: #cbd5e1;
+}
+
+.rating {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 !important; /* Overriding possible general paragraph margins */
+    text-align: right;
+}
+
+body.dark-theme .review-text {
+    color: #cbd5e1;
+}
+
+/* قسم سياسة الخصوصية الجديد */
+.privacy-section {
+    margin-top: 30px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+body.dark-theme .privacy-section {
+    border-top-color: #334155;
+}
+
+.privacy-section h3 {
+    font-size: 1.3rem;
+    color: #0369a1;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+body.dark-theme .privacy-section h3 {
+    color: #0ea5e9;
+}
+
+.privacy-content {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: justify;
+}
+
+body.dark-theme .privacy-content {
+    background-color: #0f172a;
+    border-color: #334155;
+}
+
+.privacy-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 !important;
+}
+
+body.dark-theme .privacy-text {
+    color: #cbd5e1;
 }
