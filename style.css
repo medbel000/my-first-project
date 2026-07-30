@@ -567,19 +567,24 @@ body.dark-theme .collection-card {
 
 /* Collection Icon */
 .collection-icon {
-    width: 60px;
-    height: 60px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background: linear-gradient(135deg, #0284c7, #0369a1);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 4.5rem;
     margin-bottom: 15px;
     color: white;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    box-shadow: 0 6px 15px rgba(2, 132, 199, 0.3);
 }
-
+.collection-icon img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+    padding: 4px;
+}
 .collection-content {
     flex: 1;
     display: flex;
@@ -654,6 +659,23 @@ body.dark-theme .collection-description {
 @media (min-width: 992px) {
     .collections-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive icon sizing */
+@media (max-width: 480px) {
+    .collection-icon {
+        width: 140px;
+        height: 140px;
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-icon {
+        width: 150px;
+        height: 150px;
+        font-size: 4.2rem;
     }
 }
 
