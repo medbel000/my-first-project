@@ -16,13 +16,60 @@
         <svg id="moon-icon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
 
-    <div class="container">
-        <span class="badge">🚀 البداية الجديدة</span>
-        <h1>مرحباً بكم في مشروعي الأول!</h1>
-        <h2>مرحباً بمشروعي الأول</h2>
-        <p>هذا هو مشروعي البرمجي الأول على الإطلاق، حيث أخطو خطواتي الأولى والمثيرة في عالم تطوير مواقع الويب. قمت بتصميم هذه الصفحة البسيطة لأرحب بكم وأشارككم انطلاقتي في هذا المجال الرائع.</p>
-        <button id="welcome-btn" class="btn">مرحباً بك</button>
+    <!-- قسم الهيرو الفاخرة -->
+    <div class="luxury-hero-section">
+            <!-- شريط الإعلان -->
+            <div class="announcement-bar">
+                <span class="truck-emoji">🚚</span>
+                <span class="announcement-text">Livraison gratuite pour toute commande supérieure à 600 DH</span>
+            </div>
 
+            <!-- شريط التنقل الفاخر -->
+            <nav class="luxury-navbar">
+                <div class="nav-logo">BEL MED</div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="#" class="nav-link">Nos Collections</a></li>
+                        <li><a href="parfums.html" class="nav-link">Parfums</a></li>
+                        <li><a href="sacs.html" class="nav-link">Sacs</a></li>
+                        <li><a href="bijoux.html" class="nav-link">Bijoux</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-icons">
+                    <a href="#" class="nav-icon" title="Rechercher">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </a>
+                    <a href="#" class="nav-icon" title="Compte">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </a>
+                    <a href="#" class="nav-icon" title="Panier">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- قسم الهيرو الرئيسي -->
+            <div class="hero-content">
+                <div class="hero-overlay"></div>
+                <img src="imge/sl.png" alt="Luxury Fashion Collection" class="hero-image">
+                <div class="hero-text-content">
+                    <p class="hero-subtitle">ÉLÉGANCE • LUXE • STYLE</p>
+                    <p class="hero-description">Découvrez notre collection exclusive de sacs, parfums et bijoux soigneusement sélectionnés pour sublimer votre style.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn primary-btn">Découvrir nos collections</a>
+                        <a href="#" class="hero-btn secondary-btn">Nous contacter</a>
+                    </div>
+                </div>
+                <div class="hero-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
 <!-- قسم مجموعاتنا -->
         <div class="collections-section" aria-labelledby="collections-title">
             <h3 id="collections-title">Nos Collections</h3>
@@ -181,7 +228,6 @@
         <div class="footer">
             تم التطوير بكل حب ❤️ | 2026
         </div>
-    </div>
 
     <!-- زر واتساب العائم -->
     <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="تواصل معنا عبر واتساب">
