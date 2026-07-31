@@ -503,7 +503,12 @@ body.dark-theme .review-text {
 }
 
 @media (min-width: 992px) {
-    .container { max-width: 960px; }
+    .container {
+        box-sizing: border-box;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
     .reviews-container {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -515,6 +520,7 @@ body.dark-theme .review-text {
     background-color: #ffffff;
     color: #111111;
     text-align: center;
+    overflow: hidden;
     padding: 12px 0;
     font-size: 0.9rem;
     font-weight: 500;
