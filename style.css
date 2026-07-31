@@ -517,10 +517,11 @@ body.dark-theme .review-text {
 
 /* شريط الإعلان */
 .announcement-bar {
-    background-color: #ffffff;
+    background-color: #d2b390;
     color: #111111;
     text-align: center;
     overflow: hidden;
+    position: relative;
     padding: 12px 0;
     font-size: 0.9rem;
     font-weight: 500;
@@ -534,10 +535,21 @@ body.dark-theme .review-text {
 
 .announcement-text {
     white-space: nowrap;
-    display: inline-block;
+}
+
+.announcement-track {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+    white-space: nowrap;
     animation: scroll-text 30s linear infinite;
     padding-left: 100%;
     will-change: transform;
+}
+
+.truck-emoji {
+    flex-shrink: 0;
+    margin-right: 8px;
 }
 
 @keyframes scroll-text {
@@ -864,7 +876,7 @@ body.dark-theme .hero-overlay {
 
 /* شريط الإعلان */
 .announcement-bar {
-    background-color: #ffffff;
+    background-color: #d2b390;
     color: #111111;
     text-align: center;
     padding: 12px 0;
