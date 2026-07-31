@@ -152,11 +152,11 @@ body, .container, h1, h2, p, .badge, .theme-toggle-btn, .contact-section, .conta
 }
 .container {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 60px 20px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    max-width: 500px;
-    width: 90%;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
     border: 1px solid #e2e8f0;
 }
@@ -542,11 +542,14 @@ body.dark-theme .review-text {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: #ffffff;
+    background-color: transparent;
     height: 70px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: none;
 }
 
 .nav-logo {
@@ -824,8 +827,8 @@ body.dark-theme .nav-logo {
 }
 
 body.dark-theme .luxury-navbar {
-    background-color: #1e1e1e;
-    border-bottom-color: #333333;
+    background-color: transparent;
+    border-bottom-color: transparent;
 }
 
 body.dark-theme .nav-link {
