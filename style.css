@@ -7,68 +7,6 @@ body {
     display: block;
 }
 
-/* زر تبديل الثيم */
-.theme-toggle-btn {
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: #0F6B50;
-    border: 1px solid #8B6B4A;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: all 0.3s ease;
-}
-
-.theme-toggle-btn:hover {
-    transform: rotate(15deg) scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ألوان وثيم الوضع الداكن */
-body.dark-theme {
-    background: linear-gradient(135deg, #0f172a 0%, #022c22 100%);
-    color: #f8fafc;
-}
-
-body.dark-theme .container {
-    background-color: #1e293b;
-    border-color: #334155;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-theme h1 {
-    color: #38bdf8;
-}
-
-body.dark-theme h2 {
-    color: #0ea5e9;
-}
-
-body.dark-theme p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .badge {
-    background-color: #022c22;
-    color: #4ade80;
-    border-color: #15803d;
-}
-
-body.dark-theme .theme-toggle-btn {
-    background-color: #1e293b;
-    color: #f8fafc;
-    border-color: #334155;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
 /* قسم تواصل معي */
 .contact-section {
     margin-top: 30px;
@@ -76,19 +14,11 @@ body.dark-theme .theme-toggle-btn {
     padding-top: 20px;
 }
 
-body.dark-theme .contact-section {
-    border-top-color: #334155;
-}
-
 .contact-section h3 {
     font-size: 1.3rem;
     color: #0F6B50;
     margin-bottom: 15px;
     margin-top: 0;
-}
-
-body.dark-theme .contact-section h3 {
-    color: #0ea5e9;
 }
 
 .contact-links {
@@ -138,12 +68,6 @@ body.dark-theme .contact-section h3 {
     color: #0F6B50;
 }
 
-body.dark-theme .contact-link {
-    background-color: #0f172a;
-    border-color: #334155;
-    color: #cbd5e1;
-}
-
 .contact-link:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -155,24 +79,14 @@ body.dark-theme .contact-link {
     background-color: #fef2f2;
 }
 
-body.dark-theme .contact-link.mail:hover {
-    background-color: rgba(239, 68, 68, 0.1);
-}
-
 .contact-link.github:hover {
     border-color: #1f2328;
     color: #1f2328;
     background-color: #f6f8fa;
 }
 
-body.dark-theme .contact-link.github:hover {
-    border-color: #f8fafc;
-    color: #f8fafc;
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
 /* تأثير انتقال سلس لكامل الصفحة */
-.container, h1, h2, p, .badge, .theme-toggle-btn, .contact-section, .contact-link, .reviews-section, .review-card, .customer-name, .review-text, .privacy-section, .privacy-content, .privacy-text, .collections-section, .collection-card, .collection-title, .collection-description, .discover-btn {
+.container, h1, h2, p, .badge, .contact-section, .contact-link, .reviews-section, .review-card, .customer-name, .review-text, .privacy-section, .privacy-content, .collections-section, .collection-card, .collection-title, .collection-description, .discover-btn {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 .container {
@@ -345,16 +259,6 @@ p {
 }
 
 /* ألوان الوضع الداكن لزر العودة للأعلى */
-body.dark-theme .back-to-top-btn {
-    background-color: #38bdf8;
-    color: #0f172a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-theme .back-to-top-btn:hover {
-    background-color: #0ea5e9;
-}
-
 /* تجاوب الزر مع الشاشات الصغيرة للهواتف */
 @media (max-width: 768px) {
     .back-to-top-btn {
@@ -372,19 +276,11 @@ body.dark-theme .back-to-top-btn:hover {
     padding-top: 20px;
 }
 
-body.dark-theme .reviews-section {
-    border-top-color: #334155;
-}
-
 .reviews-section h3 {
     font-size: 1.3rem;
     color: #0F6B50;
     margin-bottom: 18px;
     margin-top: 0;
-}
-
-body.dark-theme .reviews-section h3 {
-    color: #0ea5e9;
 }
 
 /* Responsive grid: 1 column (mobile), 2 (tablet), 3 (desktop) */
@@ -407,11 +303,6 @@ body.dark-theme .reviews-section h3 {
     text-align: right;
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     overflow: hidden;
-}
-
-body.dark-theme .review-card {
-    background-color: #0f172a;
-    border-color: #334155;
 }
 
 /* Avatar */
@@ -517,12 +408,6 @@ body.dark-theme .review-card {
 .review-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(2,132,199,0.08);
-}
-
-body.dark-theme .customer-name,
-body.dark-theme .customer-city,
-body.dark-theme .review-text {
-    color: #cbd5e1;
 }
 
 /* Responsive breakpoints */
@@ -866,44 +751,6 @@ body.dark-theme .review-text {
     }
 }
 
-/* Dark theme adjustments */
-body.dark-theme .announcement-bar {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border-bottom-color: #333333;
-}
-
-body.dark-theme .nav-logo {
-    color: #ffffff;
-}
-
-body.dark-theme .luxury-navbar {
-    background-color: transparent;
-    border-bottom-color: transparent;
-}
-
-body.dark-theme .nav-link {
-    color: #ffffff;
-}
-
-body.dark-theme .nav-link:hover {
-    color: #C9A96A;
-}
-
-body.dark-theme .nav-icon {
-    color: #ffffff;
-}
-
-body.dark-theme .nav-icon:hover {
-    background-color: #333333;
-    color: #C9A96A;
-}
-
-body.dark-theme .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-
 /* شريط الإعلان */
 .announcement-bar {
     background-color: #d2b390;
@@ -1030,19 +877,11 @@ body.dark-theme .hero-overlay {
     font-weight: 600;
 }
 
-body.dark-theme .product-name {
-    color: #f8fafc;
-}
-
 .product-price {
     font-size: 1.1rem;
     color: #0284c7;
     font-weight: bold;
     margin-bottom: 12px;
-}
-
-body.dark-theme .product-price {
-    color: #38bdf8;
 }
 
 .product-buy-btn {
@@ -1100,20 +939,12 @@ body.dark-theme .product-price {
     }
 }
 
-body.dark-theme .collections-section {
-    border-top-color: #334155;
-}
-
 .collections-section h3 {
     font-size: 1.3rem;
     color: #0F6B50;
     margin-bottom: 18px;
     margin-top: 0;
     text-align: center;
-}
-
-body.dark-theme .collections-section h3 {
-    color: #0ea5e9;
 }
 
 /* Responsive grid: 1 column (mobile), 2 (tablet), 3 (desktop) */
@@ -1137,11 +968,6 @@ body.dark-theme .collections-section h3 {
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     overflow: hidden;
     min-height: 220px;
-}
-
-body.dark-theme .collection-card {
-    background-color: #0f172a;
-    border-color: #334155;
 }
 
 /* Collection Banner */
@@ -1175,20 +1001,12 @@ body.dark-theme .collection-card {
     font-weight: 600;
 }
 
-body.dark-theme .collection-title {
-    color: #f8fafc;
-}
-
 .collection-description {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #475569;
     margin-bottom: 15px;
     flex-grow: 1;
-}
-
-body.dark-theme .collection-description {
-    color: #cbd5e1;
 }
 
 /* Discover Button */
@@ -1263,17 +1081,11 @@ body.dark-theme .collection-description {
     outline-offset: 4px;
 }
 
-/* ---------------------------------------------------------
-   قسم سياسة الخصوصية والمودال
-   --------------------------------------------------------- */
+/* قسم سياسة الخصوصية */
 .privacy-section {
     margin-top: 30px;
     border-top: 1px solid #8B6B4A;
     padding-top: 20px;
-}
-
-body.dark-theme .privacy-section {
-    border-top-color: #334155;
 }
 
 .privacy-section h3 {
@@ -1281,122 +1093,6 @@ body.dark-theme .privacy-section {
     color: #0F6B50;
     margin-bottom: 15px;
     margin-top: 0;
-}
-
-body.dark-theme .privacy-section h3 {
-    color: #0ea5e9;
-}
-
-.privacy-actions {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 6px;
-}
-
-/* Privacy button */
-.privacy-btn {
-    background: linear-gradient(90deg, #0284c7, #0369a1);
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 999px;
-    box-shadow: 0 8px 20px rgba(2,132,199,0.2);
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.privacy-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(2,132,199,0.24);
-}
-
-/* Modal base (hidden) */
-.modal {
-    position: fixed;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    z-index: 10000;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 240ms ease;
-}
-
-/* when open */
-.modal.open {
-    pointer-events: auto;
-    opacity: 1;
-}
-
-/* overlay */
-.modal-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(2,6,23,0.45);
-    backdrop-filter: blur(4px);
-    transition: background 200ms ease;
-}
-
-/* modal content */
-.modal-content {
-    position: relative;
-    background: #fff;
-    color: #0f172a;
-    width: 92%;
-    max-width: 720px;
-    border-radius: 12px;
-    padding: 20px 22px;
-    box-shadow: 0 20px 60px rgba(2,132,199,0.12);
-    transform: translateY(12px) scale(0.98);
-    transition: transform 260ms ease, opacity 260ms ease;
-    z-index: 2;
-    text-align: right;
-}
-
-/* when modal open, animate content in */
-.modal.open .modal-content {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-/* modal dark theme */
-body.dark-theme .modal-content {
-    background: #0b1220;
-    color: #cbd5e1;
-    border: 1px solid #263244;
-}
-
-/* close button */
-.modal-close {
-    position: absolute;
-    left: 14px;
-    top: 12px;
-    background: transparent;
-    border: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-    color: inherit;
-}
-
-/* modal body */
-.modal-body {
-    margin-top: 8px;
-    max-height: 60vh;
-    overflow: auto;
-    line-height: 1.7;
-    color: inherit;
-}
-
-/* privacy text inside modal */
-.privacy-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #475569;
-    margin: 0 !important;
-}
-
-body.dark-theme .privacy-text {
-    color: #cbd5e1;
 }
 
 /* ألوان الهوية */
@@ -1414,7 +1110,6 @@ body {
     border-color: #C9A227;
 }
 
-.theme-toggle-btn,
 .contact-link {
     border-color: #0F6B50;
 }
@@ -1446,7 +1141,6 @@ h4,
 .review-text,
 .revew-text,
 .collection-description,
-.privacy-text,
 .footer {
     color: #0F6B50;
 }
@@ -1459,8 +1153,7 @@ h4,
 .privacy-section,
 .contact-section .contact-link,
 .privacy-section .policy-link,
-.privacy-section .privacy-btn,
-.privacy-section .privacy-text {
+    .privacy-section {
     color: #1a1a1a;
 }
 
@@ -1501,7 +1194,6 @@ h4,
 }
 
 /* لون موحّد لجميع الإطارات */
-.theme-toggle-btn,
 .container,
 .contact-section,
 .contact-link,
@@ -1516,20 +1208,12 @@ h4,
 .announcement-bar,
 .hero-btn,
 .primary-btn,
-.secondary-btn,
-.modal-content,
-body.dark-theme .container,
-body.dark-theme .contact-link,
-body.dark-theme .review-card,
-body.dark-theme .collection-card,
-body.dark-theme .modal-content,
-body.dark-theme .announcement-bar {
+    .secondary-btn {
     border-color: #C9A227;
 }
 
 /* small screens */
 @media (max-width: 480px) {
-    .modal-content { padding: 16px; border-radius: 10px; }
     .avatar { width: 60px; height: 60px; flex: 0 0 60px; }
 }
 
