@@ -16,8 +16,8 @@ body {
     height: 45px;
     border-radius: 50%;
     background-color: #ffffff;
-    color: #1e293b;
-    border: 1px solid #e2e8f0;
+    color: #0F6B50;
+    border: 1px solid #8B6B4A;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     display: flex;
@@ -72,7 +72,7 @@ body.dark-theme .theme-toggle-btn {
 /* قسم تواصل معي */
 .contact-section {
     margin-top: 30px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid #8B6B4A;
     padding-top: 20px;
 }
 
@@ -82,7 +82,7 @@ body.dark-theme .contact-section {
 
 .contact-section h3 {
     font-size: 1.3rem;
-    color: #0369a1;
+    color: #0F6B50;
     margin-bottom: 15px;
     margin-top: 0;
 }
@@ -108,9 +108,9 @@ body.dark-theme .contact-section h3 {
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #8B6B4A;
     background-color: #f8fafc;
-    color: #475569;
+    color: #0F6B50;
 }
 
 body.dark-theme .contact-link {
@@ -158,15 +158,16 @@ body.dark-theme .contact-link.github:hover {
     width: 100%;
     max-width: 100%;
     text-align: center;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #8B6B4A;
+}
+h1, h2, h3, h4 {
+    color: #0F6B50;
 }
 h1 {
-    color: #0284c7;
     font-size: 2.2rem;
     margin-bottom: 20px;
 }
 h2 {
-    color: #0369a1;
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -215,7 +216,7 @@ p {
     font-size: 0.85rem;
     color: #94a3b8;
     margin-top: 20px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid #8B6B4A;
     padding-top: 15px;
 }
 
@@ -342,7 +343,7 @@ body.dark-theme .back-to-top-btn:hover {
 /* قسم آراء العملاء المحسّن */
 .reviews-section {
     margin-top: 30px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid #8B6B4A;
     padding-top: 20px;
 }
 
@@ -352,7 +353,7 @@ body.dark-theme .reviews-section {
 
 .reviews-section h3 {
     font-size: 1.3rem;
-    color: #0369a1;
+    color: #0F6B50;
     margin-bottom: 18px;
     margin-top: 0;
 }
@@ -375,7 +376,7 @@ body.dark-theme .reviews-section h3 {
     align-items: flex-start;
     gap: 14px;
     background-color: #f5eadc;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #8B6B4A;
     border-radius: 14px;
     padding: 14px;
     text-align: right;
@@ -435,7 +436,7 @@ body.dark-theme .review-card {
 .customer-name {
     font-weight: 700;
     font-size: 1rem;
-    color: #1e293b;
+    color: #0F6B50;
 }
 
 .customer-city {
@@ -468,13 +469,17 @@ body.dark-theme .review-card {
 .review-text {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #475569;
+    color: #1a1a1a;
     margin: 0 !important;
     text-align: right;
     display: -webkit-box;
     -webkit-line-clamp: 3; /* show up to 3 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.revew-text {
+    color: #1a1a1a;
 }
 
 /* show full text on hover (desktop) */
@@ -577,7 +582,7 @@ body.dark-theme .review-text {
     font-family: 'Times New Roman', serif;
     font-size: 1.2rem;
     font-weight: 400;
-    color: #111111;
+    color: #0F6B50;
     letter-spacing: 1px;
 }
 
@@ -597,7 +602,7 @@ body.dark-theme .review-text {
 
 .nav-link {
     text-decoration: none;
-    color: #111111;
+    color: #0F6B50;
     font-size: 0.9rem;
     font-weight: 500;
     padding: 8px 12px;
@@ -617,7 +622,7 @@ body.dark-theme .review-text {
 }
 
 .nav-icon {
-    color: #111111;
+    color: #0F6B50;
     transition: all 0.3s ease;
     padding: 8px;
     border-radius: 50%;
@@ -918,10 +923,78 @@ body.dark-theme .hero-overlay {
     align-items: center;
 }
 
+.products-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+}
+
+.best-products-section {
+    padding: 36px 20px;
+    background-color: #f5eadc;
+    text-align: center;
+}
+
+.best-products-section h2 {
+    margin: 0 0 24px;
+    color: #1a1a1a;
+}
+
+.best-products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.best-product-card {
+    background-color: #f5eadc;
+    border: 1px solid #C9A227;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+}
+
+.best-product-image {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.best-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.best-product-card h3 {
+    margin: 0 0 8px;
+    color: #1a1a1a;
+}
+
+.best-product-card p {
+    margin: 0;
+    color: #0F6B50;
+}
+
+.product-item {
+    border: 1px solid #C9A227;
+    border-radius: 14px;
+}
+
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
 }
 
@@ -994,7 +1067,11 @@ body.dark-theme .product-price {
 
 @media (min-width: 992px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .best-products-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -1004,7 +1081,7 @@ body.dark-theme .collections-section {
 
 .collections-section h3 {
     font-size: 1.3rem;
-    color: #0369a1;
+    color: #0F6B50;
     margin-bottom: 18px;
     margin-top: 0;
     text-align: center;
@@ -1028,7 +1105,7 @@ body.dark-theme .collections-section h3 {
     flex-direction: column;
     align-items: center;
     background-color: #f5eadc;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #8B6B4A;
     border-radius: 14px;
     padding: 20px;
     text-align: center;
@@ -1055,7 +1132,8 @@ body.dark-theme .collection-card {
 .collection-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
 }
 .collection-content {
@@ -1067,7 +1145,7 @@ body.dark-theme .collection-card {
 
 .collection-title {
     font-size: 1.2rem;
-    color: #1e293b;
+    color: #0F6B50;
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -1165,7 +1243,7 @@ body.dark-theme .collection-description {
    --------------------------------------------------------- */
 .privacy-section {
     margin-top: 30px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid #8B6B4A;
     padding-top: 20px;
 }
 
@@ -1175,7 +1253,7 @@ body.dark-theme .privacy-section {
 
 .privacy-section h3 {
     font-size: 1.3rem;
-    color: #0369a1;
+    color: #0F6B50;
     margin-bottom: 15px;
     margin-top: 0;
 }
@@ -1294,6 +1372,89 @@ body.dark-theme .modal-content {
 
 body.dark-theme .privacy-text {
     color: #cbd5e1;
+}
+
+/* ألوان الهوية */
+body {
+    background: #f5eadc;
+}
+
+.container,
+.contact-section,
+.reviews-section,
+.review-card,
+.collection-card,
+.privacy-section,
+.footer {
+    border-color: #C9A227;
+}
+
+.theme-toggle-btn,
+.contact-link {
+    border-color: #0F6B50;
+}
+
+.contact-section,
+.reviews-section,
+.privacy-section,
+.footer {
+    border-top-color: #C9A227;
+}
+
+h1,
+h2,
+h3,
+h4,
+.customer-name,
+.collection-title,
+.contact-section h3,
+.reviews-section h3,
+.collections-section h3,
+.privacy-section h3 {
+    color: #1a1a1a;
+}
+
+.contact-section p,
+.reviews-section p,
+.collections-section p,
+.privacy-section p,
+.review-text,
+.revew-text,
+.collection-description,
+.privacy-text,
+.footer {
+    color: #0F6B50;
+}
+
+.customer-city {
+    color: #333333;
+}
+
+/* لون موحّد لجميع الإطارات */
+.theme-toggle-btn,
+.container,
+.contact-section,
+.contact-link,
+.contact-link.mail:hover,
+.contact-link.github:hover,
+.reviews-section,
+.review-card,
+.collection-card,
+.privacy-section,
+.footer,
+.badge,
+.announcement-bar,
+.hero-btn,
+.primary-btn,
+.secondary-btn,
+.modal-content,
+body.dark-theme .container,
+body.dark-theme .contact-link,
+body.dark-theme .review-card,
+body.dark-theme .collection-card,
+body.dark-theme .modal-content,
+body.dark-theme .announcement-bar {
+    border-color: #C9A227;
 }
 
 /* small screens */
