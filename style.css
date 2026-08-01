@@ -283,10 +283,11 @@ p {
     margin-top: 0;
 }
 
-/* Responsive grid: 1 column (mobile), 2 (tablet), 3 (desktop) */
+/* Grid layout: 2 rows of 3 reviews each */
 .reviews-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 16px;
     text-align: right;
 }
@@ -412,20 +413,11 @@ p {
 
 /* Responsive breakpoints */
 @media (min-width: 600px) {
-    .reviews-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
     .container {
         box-sizing: border-box;
         max-width: none;
         padding-left: 0;
         padding-right: 0;
-    }
-    .reviews-container {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
