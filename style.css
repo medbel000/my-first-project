@@ -159,6 +159,238 @@ p {
     padding-top: 15px;
 }
 
+/* Product Detail Page Styles */
+.product-detail-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #C9A227;
+}
+
+.product-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-detail-image {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-detail-info {
+    text-align: center;
+}
+
+.product-detail-name {
+    font-size: 1.8rem;
+    color: #0F6B50;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.product-detail-price {
+    font-size: 1.5rem;
+    color: #111111;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: #f5eadc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.product-description {
+    text-align: right;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.product-features {
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+}
+
+.product-features li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.product-features li:before {
+    content: "✓";
+    color: #0F6B50;
+    position: absolute;
+    left: 0;
+}
+
+.product-buy-btn, .product-contact-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.product-buy-btn {
+    background: linear-gradient(135deg, #C9A227, #D4AF37);
+    color: #ffffff;
+}
+
+.product-contact-btn {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+.product-features-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #C9A227;
+}
+
+.product-features-section h3 {
+    color: #0F6B50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.feature-item {
+    background-color: #f5eadc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #C9A227;
+    text-align: center;
+}
+
+.feature-item h4 {
+    color: #0F6B50;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    color: #475569;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.related-products-section {
+    margin: 30px 0;
+}
+
+.related-products-section h3 {
+    color: #0F6B50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.related-product-item {
+    border: 1px solid #C9A227;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(2, 132, 199, 0.15);
+}
+
+.related-product-item .product-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.related-product-item .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.related-product-item .product-name {
+    font-size: 1rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.related-product-item .product-price {
+    font-size: 1.1rem;
+    color: #111111;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.related-product-item .product-buy-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A227, #D4AF37);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+/* Responsive styles for product detail pages */
+@media (min-width: 768px) {
+    .product-detail-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-detail-image {
+        margin: 0;
+    }
+
+    .product-detail-info {
+        text-align: right;
+        max-width: 500px;
+    }
+}
+
 /* زر واتساب العائم الاحترافي */
 .whatsapp-float {
     position: fixed;
