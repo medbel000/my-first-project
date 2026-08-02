@@ -6,6 +6,8 @@
     <title>Hermès Sac à main - Sacs de Luxe</title>
     <!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -13,23 +15,60 @@
         <h1>Hermès Sac à main</h1>
         <h2>حقيبة يد فاخرة من هيرميس</h2>
 
-        <!-- قسم تفاصيل المنتج -->
+        <!-- قسم تفاصيل المنتج مع التقييمات ومعرض الصور -->
         <div class="product-detail-section">
             <div class="product-detail-content">
-                <div class="product-detail-image">
-                    <img src="imge/sac.png" alt="Hermès Sac à main">
+                <!-- معرض الصور -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img src="imge/sac.png" alt="Hermès Sac à main - عرض أمامي" class="main-image" id="mainProductImage">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="imge/sac.png" alt="Hermès Sac à main - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Hermès Sac à main - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Hermès Sac à main - تفاصيل المقبض" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Hermès Sac à main - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                    </div>
                 </div>
+
+                <!-- معلومات المنتج مع التقييمات -->
                 <div class="product-detail-info">
                     <h3 class="product-detail-name">Hermès Sac à main</h3>
+
+                    <!-- نظام التقييم -->
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>5.0 من 5</span>
+                        <span class="rating-count">(212 تقييم)</span>
+                    </div>
+
                     <p class="product-detail-price">18500 MAD</p>
 
-                    <div class="product-description">
-                        <p>حقيبة يد فاخرة من هيرميس، تجسد الرفاهية والأناقة. مصنوعة من أفضل المواد مع اهتمام بالتفاصيل.</p>
-                        <ul class="product-features">
-                            <li>مصنوعة من جلد تمساح فاخر</li>
-                            <li>تصميم كلاسيكي ودائم</li>
-                            <li>حرفة يدوية استثنائية</li>
-                            <li>استثمار طويل الأمد</li>
+                    <!-- وصف منتج محسن -->
+                    <div class="enhanced-description">
+                        <h4 class="description-title">وصف مفصل</h4>
+                        <p class="description-text">
+                            حقيبة يد فاخرة من هيرميس، تجسد الرفاهية والأناقة. مصنوعة من أفضل المواد مع اهتمام بالتفاصيل، هذه الحقيبة هي قطعة فنية حقيقية يمكن أن تكون إرثًا عائليًا.
+                        </p>
+                        <p class="description-text">
+                            تتميز بتصميم كلاسيكي ودائم لا يخرج عن الموضة. المواد الفاخرة والتشطيبات الدقيقة تجعل هذه الحقيبة استثمارًا طويل الأمد يمكن أن تستمر لسنوات عديدة.
+                        </p>
+
+                        <h4 class="description-title">ميزات رئيسية</h4>
+                        <ul class="description-features">
+                            <li>مصنوعة من جلد تمساح فاخر عالي الجودة</li>
+                            <li>تصميم كلاسيكي ودائم لا يخرج عن الموضة</li>
+                            <li>حرفة يدوية استثنائية من قبل حرفيين ماهرين</li>
+                            <li>حجم مناسب لجميع المناسبات (30 × 20 × 12 سم)</li>
+                            <li>مقاومة عالية للخدوش والتآكل</li>
+                            <li>بطانة داخلية من الجير الفاخر</li>
+                            <li>شهادة أصالة مع كل منتج وضمان مدى الحياة</li>
                         </ul>
                     </div>
 
@@ -39,21 +78,60 @@
             </div>
         </div>
 
+        <!-- جدول المواصفات الفنية -->
+        <div class="product-specs">
+            <h3 class="specs-title">المواصفات الفنية</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>العلامة التجارية</td>
+                    <td>هيرميس (Hermès)</td>
+                </tr>
+                <tr>
+                    <td>المادة</td>
+                    <td>جلد تمساح فاخر</td>
+                </tr>
+                <tr>
+                    <td>الأبعاد</td>
+                    <td>30 × 20 × 12 سم</td>
+                </tr>
+                <tr>
+                    <td>الوزن</td>
+                    <td>0.95 كجم</td>
+                </tr>
+                <tr>
+                    <td>لون</td>
+                    <td>بني داكن مع تفاصيل ذهبية</td>
+                </tr>
+                <tr>
+                    <td>نوع الإغلاق</td>
+                    <td>مغلق مغناطيسي مع قفل أمني</td>
+                </tr>
+                <tr>
+                    <td>ضمان</td>
+                    <td>ضمان أصالة مدى الحياة</td>
+                </tr>
+                <tr>
+                    <td>بلد الصنع</td>
+                    <td>فرنسا</td>
+                </tr>
+            </table>
+        </div>
+
         <!-- قسم الميزات الإضافية -->
         <div class="product-features-section">
             <h3>ميزات خاصة</h3>
             <div class="features-grid">
                 <div class="feature-item">
                     <h4>جودة فاخرة</h4>
-                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين</p>
+                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين في فرنسا</p>
                 </div>
                 <div class="feature-item">
                     <h4>تصميم كلاسيكي</h4>
-                    <p>يظل أنيقًا عبر السنوات</p>
+                    <p>يظل أنيقًا عبر السنوات والاستخدام اليومي</p>
                 </div>
                 <div class="feature-item">
                     <h4>ضمان أصالة</h4>
-                    <p>شهادة أصالة مع كل منتج</p>
+                    <p>شهادة أصالة مع كل منتج وضمان مدى الحياة</p>
                 </div>
             </div>
         </div>
@@ -101,5 +179,22 @@
 
     <!-- ربط ملف الجافا سكريبت الخارجي -->
     <script src="script.js"></script>
+
+    <!-- JavaScript لمعرض الصور -->
+    <script>
+        function changeImage(thumbnail) {
+            // إزالة الفئة النشطة من جميع الصور المصغرة
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // إضافة الفئة النشطة للصورة المصغرة التي تم النقر عليها
+            thumbnail.classList.add('active');
+
+            // تغيير الصورة الرئيسية
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+            mainImage.alt = thumbnail.alt;
+        }
+    </script>
 </body>
 </html>

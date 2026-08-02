@@ -6,6 +6,8 @@
     <title>LV Sac à dos - Sacs de Luxe</title>
     <!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -13,23 +15,60 @@
         <h1>LV Sac à dos</h1>
         <h2>حقيبة ظهر فاخرة من لويس فيتون</h2>
 
-        <!-- قسم تفاصيل المنتج -->
+        <!-- قسم تفاصيل المنتج مع التقييمات ومعرض الصور -->
         <div class="product-detail-section">
             <div class="product-detail-content">
-                <div class="product-detail-image">
-                    <img src="imge/sac.png" alt="LV Sac à dos">
+                <!-- معرض الصور -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img src="imge/sac.png" alt="LV Sac à dos - عرض أمامي" class="main-image" id="mainProductImage">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="imge/sac.png" alt="LV Sac à dos - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="LV Sac à dos - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="LV Sac à dos - تفاصيل اللوغو" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="LV Sac à dos - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                    </div>
                 </div>
+
+                <!-- معلومات المنتج مع التقييمات -->
                 <div class="product-detail-info">
                     <h3 class="product-detail-name">LV Sac à dos</h3>
+
+                    <!-- نظام التقييم -->
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9 من 5</span>
+                        <span class="rating-count">(187 تقييم)</span>
+                    </div>
+
                     <p class="product-detail-price">12000 MAD</p>
 
-                    <div class="product-description">
-                        <p>حقيبة ظهر أنيقة من لويس فيتون، تجمع بين الراحة والأناقة. مصممة للحياة اليومية مع لمسة فاخرة.</p>
-                        <ul class="product-features">
+                    <!-- وصف منتج محسن -->
+                    <div class="enhanced-description">
+                        <h4 class="description-title">وصف مفصل</h4>
+                        <p class="description-text">
+                            حقيبة ظهر أنيقة من لويس فيتون، تجمع بين الراحة والأناقة. مصممة للحياة اليومية مع لمسة فاخرة، هذه الحقيبة مثالية للطلاب والمهنيين على حد سواء.
+                        </p>
+                        <p class="description-text">
+                            تتميز هذه الحقيبة بتصميم عملي مع مساحات داخلية متعددة التنظيم، بما في ذلك جيب مخصص للحاسوب المحمول حتى 15 بوصة. المواد الفاخرة والمتينة تضمن طول عمر الحقيبة مع الحفاظ على مظهرها الأنيق.
+                        </p>
+
+                        <h4 class="description-title">ميزات رئيسية</h4>
+                        <ul class="description-features">
                             <li>مصنوعة من جلد فاخر ومتين</li>
-                            <li>تصميم مريح للظهر</li>
-                            <li>مساحة داخلية واسعة</li>
+                            <li>تصميم مريح للظهر مع دعم ممتاز</li>
+                            <li>مساحة داخلية واسعة مع تنظيم ذكي</li>
+                            <li>جيب مخصص للحاسوب المحمول (حتى 15 بوصة)</li>
                             <li>تفاصيل لوغو لويس فيتون المميزة</li>
+                            <li>حزام كتف قابل للتعديل مع وسادة مريحة</li>
+                            <li>مقاومة للماء والمتانة العالية</li>
                         </ul>
                     </div>
 
@@ -37,6 +76,45 @@
                     <button class="product-contact-btn">تواصل معنا للطلب</button>
                 </div>
             </div>
+        </div>
+
+        <!-- جدول المواصفات الفنية -->
+        <div class="product-specs">
+            <h3 class="specs-title">المواصفات الفنية</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>العلامة التجارية</td>
+                    <td>لويس فيتون (Louis Vuitton)</td>
+                </tr>
+                <tr>
+                    <td>المادة</td>
+                    <td>جلد فاخر مع تفاصيل قماش</td>
+                </tr>
+                <tr>
+                    <td>الأبعاد</td>
+                    <td>32 × 28 × 15 سم</td>
+                </tr>
+                <tr>
+                    <td>الوزن</td>
+                    <td>1.1 كجم</td>
+                </tr>
+                <tr>
+                    <td>لون</td>
+                    <td>بني مع تفاصيل ذهبية</td>
+                </tr>
+                <tr>
+                    <td>سعة الحاسوب</td>
+                    <td>حتى 15 بوصة</td>
+                </tr>
+                <tr>
+                    <td>ضمان</td>
+                    <td>ضمان أصالة لمدة 2 سنة</td>
+                </tr>
+                <tr>
+                    <td>بلد الصنع</td>
+                    <td>فرنسا</td>
+                </tr>
+            </table>
         </div>
 
         <!-- قسم الميزات الإضافية -->
@@ -101,5 +179,22 @@
 
     <!-- ربط ملف الجافا سكريبت الخارجي -->
     <script src="script.js"></script>
+
+    <!-- JavaScript لمعرض الصور -->
+    <script>
+        function changeImage(thumbnail) {
+            // إزالة الفئة النشطة من جميع الصور المصغرة
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // إضافة الفئة النشطة للصورة المصغرة التي تم النقر عليها
+            thumbnail.classList.add('active');
+
+            // تغيير الصورة الرئيسية
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+            mainImage.alt = thumbnail.alt;
+        }
+    </script>
 </body>
 </html>

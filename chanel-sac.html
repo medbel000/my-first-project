@@ -6,6 +6,8 @@
     <title>Chanel Bandoulière - Sacs de Luxe</title>
     <!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -13,23 +15,60 @@
         <h1>Chanel Bandoulière</h1>
         <h2>حقيبة كتف فاخرة من شانيل</h2>
 
-        <!-- قسم تفاصيل المنتج -->
+        <!-- قسم تفاصيل المنتج مع التقييمات ومعرض الصور -->
         <div class="product-detail-section">
             <div class="product-detail-content">
-                <div class="product-detail-image">
-                    <img src="imge/sac.png" alt="Chanel Bandoulière">
+                <!-- معرض الصور -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img src="imge/sac.png" alt="Chanel Bandoulière - عرض أمامي" class="main-image" id="mainProductImage">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="imge/sac.png" alt="Chanel Bandoulière - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Chanel Bandoulière - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Chanel Bandoulière - تفاصيل السلسلة" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Chanel Bandoulière - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                    </div>
                 </div>
+
+                <!-- معلومات المنتج مع التقييمات -->
                 <div class="product-detail-info">
                     <h3 class="product-detail-name">Chanel Bandoulière</h3>
+
+                    <!-- نظام التقييم -->
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.8 من 5</span>
+                        <span class="rating-count">(145 تقييم)</span>
+                    </div>
+
                     <p class="product-detail-price">11500 MAD</p>
 
-                    <div class="product-description">
-                        <p>حقيبة كتف أنيقة من شانيل، تجمع بين الأناقة الكلاسيكية واللمسة الحديثة. مثالية للحياة اليومية والمناسبات.</p>
-                        <ul class="product-features">
-                            <li>تصميم كلاسيكي من شانيل</li>
-                            <li>جودة تصنيع فاخرة</li>
-                            <li>حزام كتف قابل للتعديل</li>
-                            <li>مساحة داخلية عملية</li>
+                    <!-- وصف منتج محسن -->
+                    <div class="enhanced-description">
+                        <h4 class="description-title">وصف مفصل</h4>
+                        <p class="description-text">
+                            حقيبة كتف أنيقة من شانيل، تجمع بين الأناقة الكلاسيكية واللمسة الحديثة. مثالية للحياة اليومية والمناسبات، هذه الحقيبة هي قطعة أساسية في أي خزانة ملابس فاخرة.
+                        </p>
+                        <p class="description-text">
+                            تتميز بتصميم كلاسيكي من شانيل مع سلسلة مميزة يمكن إزالتها للارتداء كحقيبة يد. المواد الفاخرة والتفاصيل الدقيقة تجعل هذه الحقيبة استثمارًا طويل الأمد.
+                        </p>
+
+                        <h4 class="description-title">ميزات رئيسية</h4>
+                        <ul class="description-features">
+                            <li>تصميم كلاسيكي من شانيل مع سلسلة مميزة</li>
+                            <li>جودة تصنيع فاخرة من قبل حرفيين ماهرين</li>
+                            <li>حزام كتف قابل للتعديل مع سلسلة ذهبية</li>
+                            <li>مساحة داخلية عملية مع جيب مع سحاب</li>
+                            <li>مادة خارجية مقاومة للخدوش</li>
+                            <li>بطانة داخلية من الجير الفاخر</li>
+                            <li>شهادة أصالة مع كل منتج</li>
                         </ul>
                     </div>
 
@@ -37,6 +76,45 @@
                     <button class="product-contact-btn">تواصل معنا للطلب</button>
                 </div>
             </div>
+        </div>
+
+        <!-- جدول المواصفات الفنية -->
+        <div class="product-specs">
+            <h3 class="specs-title">المواصفات الفنية</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>العلامة التجارية</td>
+                    <td>شانيل (Chanel)</td>
+                </tr>
+                <tr>
+                    <td>المادة</td>
+                    <td>جلد فاخر مع سلسلة ذهبية</td>
+                </tr>
+                <tr>
+                    <td>الأبعاد</td>
+                    <td>22 × 15 × 8 سم</td>
+                </tr>
+                <tr>
+                    <td>الوزن</td>
+                    <td>0.75 كجم</td>
+                </tr>
+                <tr>
+                    <td>لون</td>
+                    <td>أسود مع سلسلة ذهبية</td>
+                </tr>
+                <tr>
+                    <td>نوع الإغلاق</td>
+                    <td>مغلق مغناطيسي</td>
+                </tr>
+                <tr>
+                    <td>ضمان</td>
+                    <td>ضمان أصالة مدى الحياة</td>
+                </tr>
+                <tr>
+                    <td>بلد الصنع</td>
+                    <td>فرنسا</td>
+                </tr>
+            </table>
         </div>
 
         <!-- قسم الميزات الإضافية -->
@@ -101,5 +179,22 @@
 
     <!-- ربط ملف الجافا سكريبت الخارجي -->
     <script src="script.js"></script>
+
+    <!-- JavaScript لمعرض الصور -->
+    <script>
+        function changeImage(thumbnail) {
+            // إزالة الفئة النشطة من جميع الصور المصغرة
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // إضافة الفئة النشطة للصورة المصغرة التي تم النقر عليها
+            thumbnail.classList.add('active');
+
+            // تغيير الصورة الرئيسية
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+            mainImage.alt = thumbnail.alt;
+        }
+    </script>
 </body>
 </html>

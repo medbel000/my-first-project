@@ -6,6 +6,8 @@
     <title>Gucci Sac à main - Sacs de Luxe</title>
     <!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -13,23 +15,60 @@
         <h1>Gucci Sac à main</h1>
         <h2>حقيبة يد فاخرة من غوتشي</h2>
 
-        <!-- قسم تفاصيل المنتج -->
+        <!-- قسم تفاصيل المنتج مع التقييمات ومعرض الصور -->
         <div class="product-detail-section">
             <div class="product-detail-content">
-                <div class="product-detail-image">
-                    <img src="imge/sac.png" alt="Gucci Sac à main">
+                <!-- معرض الصور -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img src="imge/sac.png" alt="Gucci Sac à main - عرض أمامي" class="main-image" id="mainProductImage">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="imge/sac.png" alt="Gucci Sac à main - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Gucci Sac à main - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Gucci Sac à main - تفاصيل المقبض" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Gucci Sac à main - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                    </div>
                 </div>
+
+                <!-- معلومات المنتج مع التقييمات -->
                 <div class="product-detail-info">
                     <h3 class="product-detail-name">Gucci Sac à main</h3>
+
+                    <!-- نظام التقييم -->
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.7 من 5</span>
+                        <span class="rating-count">(124 تقييم)</span>
+                    </div>
+
                     <p class="product-detail-price">8500 MAD</p>
 
-                    <div class="product-description">
-                        <p>حقيبة يد أنيقة من غوتشي، مصنوعة من الجلد الفاخر مع تفاصيل ذهبية أنيقة. مثالية للمناسبات الرسمية واليومية.</p>
-                        <ul class="product-features">
-                            <li>مصنوعة من جلد عجل فاخر</li>
-                            <li>تفاصيل ذهبية مميزة</li>
-                            <li>حجم مناسب لجميع المناسبات</li>
-                            <li>تصميم كلاسيكي ودائم</li>
+                    <!-- وصف منتج محسن -->
+                    <div class="enhanced-description">
+                        <h4 class="description-title">وصف مفصل</h4>
+                        <p class="description-text">
+                            حقيبة يد أنيقة من غوتشي، مصنوعة من جلد عجل فاخر مع تفاصيل ذهبية مميزة. تجمع هذه الحقيبة بين الأناقة الكلاسيكية والتصميم الحديث، مما يجعلها مثالية للمناسبات الرسمية واليومية على حد سواء.
+                        </p>
+                        <p class="description-text">
+                            تتميز هذه الحقيبة بتصميم متعدد الاستخدامات، حيث يمكن حملها باليد أو على الكتف بفضل الحزام القابل للتعديل. المساحة الداخلية المتسعة تسمح بحمل جميع ضرورياتك اليومية مع الحفاظ على تنظيم ممتاز.
+                        </p>
+
+                        <h4 class="description-title">ميزات رئيسية</h4>
+                        <ul class="description-features">
+                            <li>مصنوعة من جلد عجل فاخر عالي الجودة</li>
+                            <li>تفاصيل ذهبية مميزة تضفي لمسة من الفخامة</li>
+                            <li>حجم مناسب لجميع المناسبات (28 × 18 × 12 سم)</li>
+                            <li>تصميم كلاسيكي ودائم لا يخرج عن الموضة</li>
+                            <li>حزام كتف قابل للتعديل للارتداء المريح</li>
+                            <li>جيب داخلي مع سحاب لتخزين آمن</li>
+                            <li>شهادة أصالة مع كل منتج</li>
                         </ul>
                     </div>
 
@@ -39,21 +78,60 @@
             </div>
         </div>
 
+        <!-- جدول المواصفات الفنية -->
+        <div class="product-specs">
+            <h3 class="specs-title">المواصفات الفنية</h3>
+            <table class="specs-table">
+                <tr>
+                    <td>العلامة التجارية</td>
+                    <td>غوتشي (Gucci)</td>
+                </tr>
+                <tr>
+                    <td>المادة</td>
+                    <td>جلد عجل فاخر</td>
+                </tr>
+                <tr>
+                    <td>الأبعاد</td>
+                    <td>28 × 18 × 12 سم</td>
+                </tr>
+                <tr>
+                    <td>الوزن</td>
+                    <td>0.85 كجم</td>
+                </tr>
+                <tr>
+                    <td>لون</td>
+                    <td>أسود مع تفاصيل ذهبية</td>
+                </tr>
+                <tr>
+                    <td>نوع الإغلاق</td>
+                    <td>سحاب معدني</td>
+                </tr>
+                <tr>
+                    <td>ضمان</td>
+                    <td>ضمان أصالة مدى الحياة</td>
+                </tr>
+                <tr>
+                    <td>بلد الصنع</td>
+                    <td>إيطاليا</td>
+                </tr>
+            </table>
+        </div>
+
         <!-- قسم الميزات الإضافية -->
         <div class="product-features-section">
             <h3>ميزات خاصة</h3>
             <div class="features-grid">
                 <div class="feature-item">
                     <h4>جودة فاخرة</h4>
-                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين</p>
+                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين في إيطاليا</p>
                 </div>
                 <div class="feature-item">
                     <h4>تصميم متعدد الاستخدامات</h4>
-                    <p>مناسب للمكتب والحفلات والسفر</p>
+                    <p>مناسب للمكتب والحفلات والسفر اليومي</p>
                 </div>
                 <div class="feature-item">
                     <h4>ضمان أصالة</h4>
-                    <p>شهادة أصالة مع كل منتج</p>
+                    <p>شهادة أصالة مع كل منتج وضمان مدى الحياة</p>
                 </div>
             </div>
         </div>
@@ -101,5 +179,22 @@
 
     <!-- ربط ملف الجافا سكريبت الخارجي -->
     <script src="script.js"></script>
+
+    <!-- JavaScript لمعرض الصور -->
+    <script>
+        function changeImage(thumbnail) {
+            // إزالة الفئة النشطة من جميع الصور المصغرة
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // إضافة الفئة النشطة للصورة المصغرة التي تم النقر عليها
+            thumbnail.classList.add('active');
+
+            // تغيير الصورة الرئيسية
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+            mainImage.alt = thumbnail.alt;
+        }
+    </script>
 </body>
 </html>
