@@ -1,5 +1,10 @@
 {
     "chat.tools.terminal.autoApprove": {
-        "ForEach-Object": true
+        "ForEach-Object": true,
+        "from": true,
+        "p": true,
+        "text": true,
+        "print('updated": true,
+        "PY": true
     }
 }

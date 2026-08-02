@@ -3,7 +3,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const welcomeBtn = document.getElementById('welcome-btn');
     if (welcomeBtn) {
         welcomeBtn.addEventListener('click', () => {
-            alert('أهلاً بك! يسعدني جداً تواصلك معي في مشروعي الأول. ❤️');
+            alert('أهلاً بك! يسعدني جداً تواصلك معي في مشروجي الأول. ❤️');
+        });
+    }
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active', isOpen);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 

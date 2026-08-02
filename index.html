@@ -21,7 +21,10 @@
             <!-- شريط التنقل الفاخر -->
             <nav class="luxury-navbar">
                 <div class="nav-logo">BEL MED</div>
-                <div class="nav-menu">
+                <button class="nav-toggle" type="button" aria-label="Afficher le menu" aria-expanded="false" aria-controls="site-nav">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-menu" id="site-nav">
                     <ul class="nav-links">
                         <li><a href="#" class="nav-link">Nos Collections</a></li>
                         <li><a href="parfums.html" class="nav-link">Parfums</a></li>
@@ -68,43 +71,67 @@
         <div class="best-products-grid">
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/parfum.png" alt="Chanel No. 5"></div>
-                <h3>Chanel No. 5</h3>
-                <p>Parfum de luxe</p>
+                <div class="best-product-info">
+                    <h3>Chanel No. 5</h3>
+                    <p class="best-product-category">Parfum de luxe</p>
+                    <p class="best-product-price">4 800 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/parfum.png" alt="Dior J'adore"></div>
-                <h3>Dior J'adore</h3>
-                <p>Parfum de luxe</p>
+                <div class="best-product-info">
+                    <h3>Dior J'adore</h3>
+                    <p class="best-product-category">Parfum de luxe</p>
+                    <p class="best-product-price">3 900 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/parfum.png" alt="YSL Black Opium"></div>
-                <h3>YSL Black Opium</h3>
-                <p>Parfum de luxe</p>
+                <div class="best-product-info">
+                    <h3>YSL Black Opium</h3>
+                    <p class="best-product-category">Parfum de luxe</p>
+                    <p class="best-product-price">3 500 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/sac.png" alt="Gucci Sac à main"></div>
-                <h3>Gucci Sac à main</h3>
-                <p>Sac de luxe</p>
+                <div class="best-product-info">
+                    <h3>Gucci Sac à main</h3>
+                    <p class="best-product-category">Sac de luxe</p>
+                    <p class="best-product-price">8 500 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/sac.png" alt="LV Sac à dos"></div>
-                <h3>LV Sac à dos</h3>
-                <p>Sac de luxe</p>
+                <div class="best-product-info">
+                    <h3>LV Sac à dos</h3>
+                    <p class="best-product-category">Sac de luxe</p>
+                    <p class="best-product-price">12 000 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/bijou.png" alt="Collier Cartier Or"></div>
-                <h3>Collier Cartier Or</h3>
-                <p>Bijou de luxe</p>
+                <div class="best-product-info">
+                    <h3>Collier Cartier Or</h3>
+                    <p class="best-product-category">Bijou de luxe</p>
+                    <p class="best-product-price">15 000 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/bijou.png" alt="Bague Tiffany Diamant"></div>
-                <h3>Bague Tiffany Diamant</h3>
-                <p>Bijou de luxe</p>
+                <div class="best-product-info">
+                    <h3>Bague Tiffany Diamant</h3>
+                    <p class="best-product-category">Bijou de luxe</p>
+                    <p class="best-product-price">9 800 MAD</p>
+                </div>
             </article>
             <article class="best-product-card">
                 <div class="best-product-image"><img src="imge/bijou.png" alt="Montre Rolex Or"></div>
-                <h3>Montre Rolex Or</h3>
-                <p>Bijou de luxe</p>
+                <div class="best-product-info">
+                    <h3>Montre Rolex Or</h3>
+                    <p class="best-product-category">Bijou de luxe</p>
+                    <p class="best-product-price">22 000 MAD</p>
+                </div>
             </article>
         </div>
     </section>
@@ -182,7 +209,7 @@
                         <div class="review-header">
                             <div class="customer-info">
                                 <span class="customer-name">Salma</span>
-                                <span class="customer-city"غ>Rabat</span>
+                                <span class="customer-city">Rabat</span>
                                 <span class="verified" title="موثّق" aria-hidden="true">✔</span>
                             </div>
                             <div class="rating" aria-label="5 نجوم">★★★★★</div>
@@ -210,7 +237,7 @@
                     </div>
                 </div>
 
-               i <div class="review-card">
+                <div class="review-card">
                     <div class="avatar">
                          <img src="imge/1.png" alt="Photo de Sara">
                     </div>
@@ -279,10 +306,6 @@
                 <a href="tel:+212600000000" class="contact-link phone" title="Téléphone">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
                     <span>+212 600 000 000</span>
-                </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link github" title="جيت هاب">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>جيت هاب</span>
                 </a>
             </div>
         </div>
