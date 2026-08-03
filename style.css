@@ -1845,3 +1845,77 @@ h4,
     .avatar { width: 60px; height: 60px; flex: 0 0 60px; }
 }
 
+/* Fix horizontal scrolling issues on mobile - preserve all existing design and animations */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Ensure containers don't cause horizontal overflow */
+.luxury-hero-section, .hero-content, .container {
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Ensure grids don't cause horizontal overflow */
+.best-products-grid, .reviews-container, .collections-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Ensure cards don't exceed viewport width */
+.review-card, .best-product-card, .collection-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure images don't cause horizontal overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile-specific fixes to prevent horizontal overflow while preserving design */
+@media (max-width: 768px) {
+    /* Ensure grids fit within viewport */
+    .best-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .reviews-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .collections-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    /* Ensure all cards fit within viewport */
+    .review-card, .best-product-card, .collection-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .best-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+
