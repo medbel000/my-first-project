@@ -3,17 +3,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prada Sac fourreau - Sacs de Luxe</title>
+    <title>Prada Re-Edition - Sacs de Luxe</title>
     <!-- ربط ملف التنسيق الخارجي -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for enhanced product page */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .trust-badge i {
+            color: #0F6B50;
+            font-size: 1.1rem;
+        }
+        .urgency-banner {
+            background: linear-gradient(135deg, #fef2f2, #fef9c3);
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        .urgency-banner i {
+            color: #ef4444;
+        }
+        .product-availability {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        .in-stock {
+            color: #10b981;
+        }
+        .low-stock {
+            color: #f59e0b;
+        }
+        .out-of-stock {
+            color: #ef4444;
+        }
+        .size-guide {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .faq-section {
+            margin: 30px 0;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #C9A227;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #0F6B50;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-answer {
+            color: #475569;
+            line-height: 1.6;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .video-section {
+            margin: 25px 0;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('imge/sac.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .play-button:hover {
+            transform: scale(1.1);
+            background: #fff;
+        }
+        .play-button i {
+            color: #0F6B50;
+            font-size: 1.5rem;
+            margin-left: 3px;
+        }
+        .customer-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .customer-photo {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #f1f5f9;
+        }
+        .customer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sticky-add-to-cart {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+        }
+        .sticky-add-to-cart.show {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .sticky-add-to-cart.show {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .sticky-add-to-cart .product-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .sticky-add-to-cart .product-price {
+                font-weight: bold;
+                color: #111111;
+            }
+        }
+        .breadcrumb {
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .breadcrumb a {
+            color: #0F6B50;
+            text-decoration: none;
+        }
+        .breadcrumb i {
+            margin: 0 5px;
+            color: #94a3b8;
+        }
+        .product-comparison {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .comparison-btn {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .comparison-btn:hover {
+            background: #e2e8f0;
+        }
+        .recently-viewed {
+            margin: 30px 0;
+        }
+        .recently-viewed h3 {
+            color: #0F6B50;
+            margin-bottom: 15px;
+        }
+
+        /* Product Pricing Display */
+        .product-pricing-display {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .discounted-price {
+            font-size: 1.8rem;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        .discount-badge {
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Product Variants Section */
+        .product-variants {
+            margin: 25px 0;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #C9A227;
+        }
+
+        .variants-title {
+            font-size: 1.2rem;
+            color: #0F6B50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .variant-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .variant-option {
+            padding: 10px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .variant-option:hover, .variant-option.active {
+            border-color: #0F6B50;
+            background: #f0fdf4;
+            color: #0F6B50;
+            font-weight: 500;
+        }
+
+        /* Luxury Purchase Box */
+        .luxury-purchase-box {
+            margin: 20px 0;
+            background: linear-gradient(135deg, #f5eadc 0%, #f8fafc 100%);
+            border: 2px solid #C9A227;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .purchase-box-title {
+            font-size: 1.3rem;
+            color: #0F6B50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0F6B50;
+            box-shadow: 0 0 0 3px rgba(15, 107, 80, 0.1);
+        }
+
+        .price-summary {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .price-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .price-summary-label {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .price-summary-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .original-price-summary {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        .total-price {
+            font-size: 1.3rem;
+            color: #0F6B50;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #C9A227, #D4AF37);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
+        }
+
+        .order-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(201, 162, 39, 0.4);
+        }
+
+        .order-button:active {
+            transform: translateY(0);
+        }
+
+        .secure-payment-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .secure-payment-note i {
+            color: #0F6B50;
+            margin: 0 5px;
+        }
+
+        /* Enhanced Image Gallery with Descriptions */
+        .enhanced-gallery {
+            margin: 30px 0;
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #C9A227;
+        }
+
+        .gallery-title {
+            font-size: 1.4rem;
+            color: #0F6B50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-description {
+            line-height: 1.8;
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        .gallery-description h4 {
+            color: #0F6B50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .gallery-description p {
+            margin-bottom: 12px;
+        }
+
+        /* Mobile Sticky Purchase Bar */
+        .mobile-sticky-purchase {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #f5eadc, #f8fafc);
+            border-top: 1px solid #C9A227;
+            padding: 15px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-sticky-purchase.show {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(0);
+        }
+
+        .sticky-product-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sticky-product-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid #e2e8f0;
+        }
+
+        .sticky-product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-product-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .sticky-product-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .sticky-order-button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #C9A227, #D4AF37);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .sticky-order-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .mobile-sticky-purchase {
+                display: none !important;
+            }
+        }
+
+        /* Craftsmanship Highlights */
+        .craftsmanship-highlights {
+            margin: 30px 0;
+            background: linear-gradient(135deg, #f5eadc, #f8fafc);
+            border: 2px solid #C9A227;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .craftsmanship-title {
+            font-size: 1.3rem;
+            color: #0F6B50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .craftsmanship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .craftsmanship-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .craftsmanship-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0fdf4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #0F6B50;
+            font-size: 1.5rem;
+        }
+
+        .craftsmanship-item h4 {
+            color: #0F6B50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .craftsmanship-item p {
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Floating Purchase Button */
+        .purchase-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px;
+            left: 25px;
+            background: linear-gradient(135deg, #C9A227, #D4AF37);
+            color: #ffffff;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 9998;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .purchase-float:hover {
+            background: linear-gradient(135deg, #D4AF37, #E0B842);
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Pulse animation for floating button */
+        .purchase-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9A227, #D4AF37);
+            opacity: 0.5;
+            z-index: -1;
+            animation: purchase-pulse 2s infinite;
+        }
+
+        @keyframes purchase-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive adjustments for floating buttons */
+        @media (max-width: 768px) {
+            .purchase-float {
+                width: 50px;
+                height: 50px;
+                bottom: 80px;
+                left: 20px;
+            }
+            .purchase-float svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* Purchase section layout */
+        .purchase-variants-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .purchase-variants-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Breadcrumb navigation -->
+    <div class="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <i class="fas fa-chevron-left"></i>
+        <a href="sacs.html">الحقائب</a>
+        <i class="fas fa-chevron-left"></i>
+        <span>Prada Re-Edition</span>
+    </div>
+
     <div class="container">
+        <!-- Trust badges -->
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>ضمان أصالة 100%</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-credit-card"></i>
+                <span>دفع آمن</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-truck"></i>
+                <span>توصيل سريع</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-undo"></i>
+                <span>إرجاع خلال 14 يوم</span>
+            </div>
+        </div>
+
         <span class="badge">🚀 Sacs de Luxe</span>
-        <h1>Prada Sac fourreau</h1>
-        <h2>حقيبة فاخرة من برادا</h2>
+        <h1>Prada Re-Edition</h1>
+        <h2>حقيبة ري-إديشن الفاخرة من برادا</h2>
+
+        <!-- Urgency banner -->
+        <div class="urgency-banner">
+            <i class="fas fa-clock"></i>
+            <span>الكمية محدودة - 2 قطعة فقط متبقية!</span>
+        </div>
+
+        <!-- Product availability -->
+        <div class="product-availability">
+            <i class="fas fa-check-circle in-stock"></i>
+            <span class="in-stock">متوفر في المخزون</span>
+        </div>
 
         <!-- قسم تفاصيل المنتج مع التقييمات ومعرض الصور -->
         <div class="product-detail-section">
@@ -21,19 +766,29 @@
                 <!-- معرض الصور -->
                 <div class="product-gallery">
                     <div class="main-image-container">
-                        <img src="imge/sac.png" alt="Prada Sac fourreau - عرض أمامي" class="main-image" id="mainProductImage">
+                        <img src="imge/sac.png" alt="Prada Re-Edition - عرض أمامي" class="main-image" id="mainProductImage">
                     </div>
                     <div class="thumbnail-gallery">
-                        <img src="imge/sac.png" alt="Prada Sac fourreau - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
-                        <img src="imge/sac.png" alt="Prada Sac fourreau - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
-                        <img src="imge/sac.png" alt="Prada Sac fourreau - تفاصيل المقبض" class="thumbnail-image" onclick="changeImage(this)">
-                        <img src="imge/sac.png" alt="Prada Sac fourreau - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Prada Re-Edition - عرض أمامي" class="thumbnail-image active" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Prada Re-Edition - عرض جانبي" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Prada Re-Edition - تفاصيل المقبض" class="thumbnail-image" onclick="changeImage(this)">
+                        <img src="imge/sac.png" alt="Prada Re-Edition - العرض الداخلي" class="thumbnail-image" onclick="changeImage(this)">
+                    </div>
+
+                    <!-- Pricing display below product image -->
+                    <div class="product-pricing-display">
+                        <div class="price-container">
+                            <span class="original-price">18,500 MAD</span>
+                            <span class="discounted-price">15,500 MAD</span>
+                            <span class="discount-badge">-16%</span>
+                        </div>
+                        <p class="price-note">السعر شامل الضريبة</p>
                     </div>
                 </div>
 
                 <!-- معلومات المنتج مع التقييمات -->
                 <div class="product-detail-info">
-                    <h3 class="product-detail-name">Prada Sac fourreau</h3>
+                    <h3 class="product-detail-name">Prada Re-Edition</h3>
 
                     <!-- نظام التقييم -->
                     <div class="product-rating">
@@ -42,19 +797,32 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <span>4.6 من 5</span>
-                        <span class="rating-count">(98 تقييم)</span>
+                        <span>4.9 من 5</span>
+                        <span class="rating-count">(148 تقييم)</span>
                     </div>
 
-                    <p class="product-detail-price">9800 MAD</p>
+                    <p class="product-detail-price">15500 MAD</p>
+
+                    <!-- Size guide -->
+                    <div class="size-guide">
+                        <h4 style="color: #0F6B50; margin-bottom: 10px;">دليل الحجم</h4>
+                        <p style="margin: 0; color: #475569;">27 × 19 × 11 سم - مناسب للمناسبات الخاصة</p>
+                    </div>
+
+                    <!-- Product comparison -->
+                    <div class="product-comparison">
+                        <button class="comparison-btn">
+                            <i class="fas fa-balance-scale"></i> مقارنة المنتجات
+                        </button>
+                    </div>
 
                     <!-- وصف منتج محسن -->
                     <div class="enhanced-description">
                         <h4 class="description-title">وصف مفصل</h4>
                         <p class="description-text">
-                            حقيبة أنيقة من برادا، تجمع بين الأناقة الحديثة واللمسة الكلاسيكية. مثالية للمناسبات الخاصة والحفلات الرسمية، هذه الحقيبة تضفي لمسة من الرفاهية على أي إطلالة.
+                            حقيبة ري-إديشن الأنيقة من برادا، تجمع بين الأناقة الحديثة والتصميم الفاخر. مصممة للمرأة العصرية التي تبحث عن الجودة والأناقة في آن واحد.
                         </p>
                         <p class="description-text">
                             تتميز بتصميم أنيق ومميز مع اهتمام بالتفاصيل الدقيقة. المواد الفاخرة والتشطيبات الدقيقة تجعل هذه الحقيبة قطعة فنية حقيقية يمكن أن تكون إرثًا عائليًا.
@@ -62,18 +830,228 @@
 
                         <h4 class="description-title">ميزات رئيسية</h4>
                         <ul class="description-features">
-                            <li>تصميم أنيق ومميز من برادا</li>
-                            <li>جودة تصنيع فاخرة مع اهتمام بالتفاصيل</li>
-                            <li>حجم مناسب للمناسبات الخاصة (25 × 16 × 8 سم)</li>
-                            <li>تفاصيل برادا المميزة مع لوغو مميز</li>
-                            <li>مادة خارجية مقاومة للخدوش</li>
-                            <li>بطانة داخلية من القطن الفاخر</li>
+                            <li>تصميم أنيق من برادا</li>
+                            <li>مصنوعة من جلد فاخر عالي الجودة</li>
+                            <li>حجم مناسب للمناسبات الخاصة (27 × 19 × 11 سم)</li>
+                            <li>تفاصيل برادا المميزة</li>
+                            <li>مقاومة عالية للخدوش والتآكل</li>
+                            <li>بطانة داخلية من الساتان الفاخر</li>
                             <li>شهادة أصالة مع كل منتج</li>
                         </ul>
                     </div>
 
-                    <button class="product-buy-btn">أضف إلى السلة</button>
                     <button class="product-contact-btn">تواصل معنا للطلب</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purchase and Variants Container -->
+        <div class="purchase-variants-container">
+            <!-- Product Variants Section -->
+            <div class="product-variants">
+                <h3 class="variants-title">اختر الخيار المفضل</h3>
+                <div class="variant-options">
+                    <div class="variant-option active" onclick="selectVariant(this)">
+                        <i class="fas fa-check-circle"></i> أسود كلاسيكي
+                    </div>
+                    <div class="variant-option" onclick="selectVariant(this)">
+                        <i class="fas fa-circle"></i> بني فاخر
+                    </div>
+                    <div class="variant-option" onclick="selectVariant(this)">
+                        <i class="fas fa-circle"></i> بيج طبيعي
+                    </div>
+                    <div class="variant-option" onclick="selectVariant(this)">
+                        <i class="fas fa-circle"></i> أحمر بورغندي
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luxury Purchase Box -->
+            <div class="luxury-purchase-box">
+                <h3 class="purchase-box-title">اطلب منتجك الفاخر الآن</h3>
+
+                <form id="luxuryOrderForm" onsubmit="submitOrder(event)">
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">الاسم الكامل</label>
+                        <input type="text" id="fullName" class="form-input" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="form-label">المدينة</label>
+                        <input type="text" id="city" class="form-input" placeholder="أدخل مدينتك" required>
+                    </div>
+
+                    <div class="price-summary">
+                        <div class="price-summary-row">
+                            <span class="price-summary-label">السعر الأصلي</span>
+                            <span class="price-summary-value original-price-summary">18,500 MAD</span>
+                        </div>
+                        <div class="price-summary-row">
+                            <span class="price-summary-label">السعر بعد الخصم</span>
+                            <span class="price-summary-value">15,500 MAD</span>
+                        </div>
+                        <div class="price-summary-row">
+                            <span class="price-summary-label">الخصم</span>
+                            <span class="price-summary-value" style="color: #ef4444;">-3,000 MAD</span>
+                        </div>
+                        <div class="total-price">
+                            الإجمالي: 15,500 MAD
+                        </div>
+                    </div>
+
+                    <button type="submit" class="order-button">
+                        <i class="fas fa-shopping-bag"></i> طلب الآن
+                    </button>
+
+                    <p class="secure-payment-note">
+                        <i class="fas fa-lock"></i> دفع آمن ومضمون عبر بوابات دفع معتمدة
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Enhanced Image Gallery with Detailed Descriptions -->
+        <div class="enhanced-gallery">
+            <h3 class="gallery-title">استكشاف تصميم الحقيبة الفاخر</h3>
+
+            <!-- Front View -->
+            <div class="gallery-item">
+                <img src="imge/sac.png" alt="Prada Re-Edition - العرض الأمامي الكامل" class="gallery-image">
+                <div class="gallery-description">
+                    <h4>التصميم الأمامي: أناقة كلاسيكية مع لمسة عصرية</h4>
+                    <p>يظهر التصميم الأمامي لحقيبة برادا ري-إديشن التوازن المثالي بين الأناقة الكلاسيكية واللمسة العصرية. تتميز الحقيبة بخطوطها الناعمة والمتناسقة التي تعكس رقي العلامة التجارية الإيطالية. المقبض المزدوج المصنوع من الجلد الفاخر يوفر راحة مريحة أثناء الحمل، بينما يبرز الشعار المميز للعلامة التجارية على الواجهة كشهادة على الجودة الفاخرة.</p>
+                    <p>الجلد الناعم والمتين المستخدم في التصنيع يعكس الضوء بشكل جميل، مما يعزز من جمال الحقيبة في أي إضاءة. التفاصيل المعدنية الذهبية تضيف لمسة من الفخامة والرفاهية، مما يجعل هذه الحقيبة قطعة فنية حقيقية يمكن أن تكون مركز اهتمام في أي إطلالة.</p>
+                </div>
+            </div>
+
+            <!-- Side View -->
+            <div class="gallery-item">
+                <img src="imge/sac.png" alt="Prada Re-Edition - العرض الجانبي مع التفاصيل" class="gallery-image">
+                <div class="gallery-description">
+                    <h4>التصميم الجانبي: هندسة دقة وحرفية عالية</h4>
+                    <p>يظهر العرض الجانبي للحقيبة هندسة دقة وحرفية عالية، حيث يتميز بالخطوط المنحنية بشكل أنيق والتي تعطي الحقيبة شكلها المميز. يمكن ملاحظة سمك الجلد الفاخر الذي يضمن متانة الحقيبة مع الحفاظ على مرونتها ووزنها الخفيف.</p>
+                    <p>الغزارة المتقنة على الجوانب تعكس اهتمام العلامة التجارية بالتفاصيل الدقيقة، حيث يتم خياطة كل غزارة يدويًا لضمان المتانة والجودة. السحاب المعدني الفاخر على الجانب يضمن سهولة الوصول إلى المحتويات مع الحفاظ على أمانها، بينما يبرز الشعار المنقوش بشكل دقيق كشهادة على أصالة المنتج.</p>
+                </div>
+            </div>
+
+            <!-- Handle Details -->
+            <div class="gallery-item">
+                <img src="imge/sac.png" alt="Prada Re-Edition - تفاصيل المقبض والحمل" class="gallery-image">
+                <div class="gallery-description">
+                    <h4>تفاصيل المقبض: راحة فاخرة ومتانة استثنائية</h4>
+                    <p>تم تصميم مقابض حقيبة برادا ري-إديشن بعناية فائقة لتوفير أقصى درجات الراحة أثناء الحمل. المقبض المزدوج المصنوع من جلد فاخر سميك يضمن توزيع الوزن بشكل متوازن، مما يجعل الحقيبة مريحة للحمل لفترات طويلة.</p>
+                    <p>التفاصيل المعدنية الذهبية على نقاط التثبيت لا تضيف فقط لمسة من الفخامة، بل تضمن أيضًا متانة استثنائية. يمكن ملاحظة الدقة في الخياطة حول نقاط التثبيت، حيث يتم استخدام خيوط قوية ومتينة لضمان أن تبقى المقابض ثابتة حتى مع الاستخدام اليومي المكثف.</p>
+                    <p>الطول المثالي للمقابض يسمح بحمل الحقيبة على الكتف أو في اليد، مما يوفر مرونة في الاستخدام حسب المناسبات المختلفة.</p>
+                </div>
+            </div>
+
+            <!-- Interior View -->
+            <div class="gallery-item">
+                <img src="imge/sac.png" alt="Prada Re-Edition - العرض الداخلي والبطانة" class="gallery-image">
+                <div class="gallery-description">
+                    <h4>التفاصيل الداخلية: فخامة من الداخل والخارج</h4>
+                    <p>يكشف العرض الداخلي للحقيبة عن نفس مستوى الجودة والفخامة الذي يميز التصميم الخارجي. البطانة الداخلية المصنوعة من الساتان الفاخر توفر حماية ناعمة للمحتويات، بينما تعكس الضوء بشكل جميل لإضاءة المحتويات.</p>
+                    <p>الجيب الداخلي المنظم مع السحاب يوفر مساحة إضافية لتخزين العناصر الصغيرة مثل المفاتيح أو بطاقات الائتمان، مما يضمن تنظيم محتويات الحقيبة بشكل مثالي. الغزارات الداخلية المتقنة تضيف لمسة من الأناقة وتضمن متانة البطانة.</p>
+                    <p>الشعار المنقوش على اللوحة الداخلية هو شهادة على أصالة المنتج ويضيف لمسة من الفخامة إلى التجربة العامة. المساحة الداخلية الواسعة تسمح بحمل جميع الضروريات اليومية مع الحفاظ على شكل الحقيبة أنيقًا ومنظمًا.</p>
+                </div>
+            </div>
+
+            <!-- Craftsmanship Close-up -->
+            <div class="gallery-item">
+                <img src="imge/sac.png" alt="Prada Re-Edition - تفاصيل الحرفية اليدوية" class="gallery-image">
+                <div class="gallery-description">
+                    <h4>الحرفية اليدوية: فن وصناعة في كل تفصيلة</h4>
+                    <p>تعتبر حقيبة برادا ري-إديشن تحفة فنية حقيقية، حيث يتم صنع كل حقيبة يدويًا من قبل حرفيين ماهرين في إيطاليا. يمكن ملاحظة دقة الحرفية في كل غزارة، حيث يتم خياطة كل جزء بعناية فائقة لضمان المتانة والجودة.</p>
+                    <p>الجلد الفاخر المستخدم في التصنيع يتم معالجته بشكل خاص للحفاظ على نعومته ومتانته، مما يضمن أن تظل الحقيبة جميلة حتى بعد سنوات من الاستخدام. التفاصيل المعدنية الذهبية يتم صقلها يدويًا لإعطاء لمعان فاخر ومتانة استثنائية.</p>
+                    <p>كل حقيبة تأتي مع رقم تسلسلي فريد وشهادة أصالة، مما يضمن أن كل قطعة هي عمل فني أصلي من برادا. هذه الحقيبة ليست مجرد قطعة إكسسوارات، بل هي استثمار في الجودة والفخامة التي تدوم لسنوات.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Craftsmanship Highlights Section -->
+        <div class="craftsmanship-highlights">
+            <h3 class="craftsmanship-title">ما يجعل هذه الحقيبة استثمارًا فاخرًا</h3>
+            <div class="craftsmanship-grid">
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4>جلد فاخر معالج يدويًا</h4>
+                    <p>مصنوع من جلد فاخر يتم معالجته يدويًا لضمان النعومة والمتانة، مع الحفاظ على لمعان طبيعي جميل.</p>
+                </div>
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h4>صناعة يدوية إيطالية</h4>
+                    <p>كل حقيبة يتم صنعها يدويًا من قبل حرفيين إيطاليين ماهرين، مما يضمن جودة استثنائية في كل تفصيلة.</p>
+                </div>
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>متانة تدوم لسنوات</h4>
+                    <p>الخياطة المتقنة والمواد الفاخرة تضمن أن تظل الحقيبة جميلة ووظيفية حتى بعد سنوات من الاستخدام اليومي.</p>
+                </div>
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>تصميم متعدد الاستخدامات</h4>
+                    <p>التصميم الأنيق يجعل الحقيبة مناسبة للحياة اليومية والمناسبات الخاصة، مما يضمن استثمارًا ذكيًا.</p>
+                </div>
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>رمز للرفاهية</h4>
+                    <p>الشعار المميز والتفاصيل الفاخرة تجعل هذه الحقيبة رمزًا للرفاهية والأناقة التي تعكس ذوقك الرفيع.</p>
+                </div>
+                <div class="craftsmanship-item">
+                    <div class="craftsmanship-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>إرث عائلي</h4>
+                    <p>الجودة الاستثنائية والتصميم الكلاسيكي يجعل هذه الحقيبة قطعة يمكن أن تكون إرثًا عائليًا ينقل من جيل إلى آخر.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video section -->
+        <div class="video-section">
+            <h3 style="color: #0F6B50; margin-bottom: 15px;">شاهد الحقيبة في الفيديو</h3>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer photos section -->
+        <div class="customer-photos-section">
+            <h3 style="color: #0F6B50; margin-bottom: 15px;">صور من عملائنا</h3>
+            <div class="customer-photos">
+                <div class="customer-photo">
+                    <img src="imge/sac.png" alt="Customer photo 1">
+                </div>
+                <div class="customer-photo">
+                    <img src="imge/sac.png" alt="Customer photo 2">
+                </div>
+                <div class="customer-photo">
+                    <img src="imge/sac.png" alt="Customer photo 3">
+                </div>
+                <div class="customer-photo">
+                    <img src="imge/sac.png" alt="Customer photo 4">
+                </div>
+                <div class="customer-photo">
+                    <img src="imge/sac.png" alt="Customer photo 5">
                 </div>
             </div>
         </div>
@@ -92,11 +1070,11 @@
                 </tr>
                 <tr>
                     <td>الأبعاد</td>
-                    <td>25 × 16 × 8 سم</td>
+                    <td>27 × 19 × 11 سم</td>
                 </tr>
                 <tr>
                     <td>الوزن</td>
-                    <td>0.65 كجم</td>
+                    <td>0.75 كجم</td>
                 </tr>
                 <tr>
                     <td>لون</td>
@@ -104,7 +1082,7 @@
                 </tr>
                 <tr>
                     <td>نوع الإغلاق</td>
-                    <td>مغلق مغناطيسي</td>
+                    <td>سحاب معدني</td>
                 </tr>
                 <tr>
                     <td>ضمان</td>
@@ -117,21 +1095,77 @@
             </table>
         </div>
 
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3>أسئلة شائعة</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <i class="fas fa-question-circle"></i>
+                    <span>هل المنتج أصلي مع شهادة؟</span>
+                </div>
+                <div class="faq-answer">
+                    نعم، جميع منتجاتنا أصلية 100% وتأتي مع شهادة أصالة رسمية من العلامة التجارية.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <i class="fas fa-question-circle"></i>
+                    <span>ما هي سياسة الإرجاع؟</span>
+                </div>
+                <div class="faq-answer">
+                    يمكنك إرجاع المنتج خلال 14 يومًا من الاستلام، بشرط أن يكون في حالته الأصلية مع جميع الملحقات والعلب.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <i class="fas fa-question-circle"></i>
+                    <span>كيف يمكنني التحقق من أصالة المنتج؟</span>
+                </div>
+                <div class="faq-answer">
+                    كل منتج يأتي مع شهادة أصالة، رقم تسلسلي فريد، ويمكنك أيضًا التحقق من خلال موقع العلامة التجارية الرسمي.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <i class="fas fa-question-circle"></i>
+                    <span>ما هي مدة الضمان؟</span>
+                </div>
+                <div class="faq-answer">
+                    جميع منتجاتنا تأتي بضمان أصالة لمدة 2 سنة ضد عيوب التصنيع.
+                </div>
+            </div>
+        </div>
+
         <!-- قسم الميزات الإضافية -->
         <div class="product-features-section">
             <h3>ميزات خاصة</h3>
             <div class="features-grid">
                 <div class="feature-item">
                     <h4>جودة فاخرة</h4>
-                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين في إيطاليا</p>
+                    <p>مصنوعة يدويًا من قبل حرفيين ماهرين</p>
                 </div>
                 <div class="feature-item">
                     <h4>تصميم أنيق</h4>
-                    <p>مناسب للمناسبات الخاصة والحفلات</p>
+                    <p>مناسب للحياة اليومية والمناسبات</p>
                 </div>
                 <div class="feature-item">
                     <h4>ضمان أصالة</h4>
                     <p>شهادة أصالة مع كل منتج</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recently viewed products -->
+        <div class="recently-viewed">
+            <h3>المنتجات التي شاهدتها مؤخرًا</h3>
+            <div class="related-products-grid">
+                <div class="related-product-item">
+                    <div class="product-image">
+                        <img src="imge/sac.png" alt="Bottega Veneta Cassette">
+                    </div>
+                    <h4 class="product-name">Bottega Veneta Cassette</h4>
+                    <p class="product-price">15,500 MAD</p>
+                    <a href="bottega-sac.html" class="product-buy-btn">عرض التفاصيل</a>
                 </div>
             </div>
         </div>
@@ -142,20 +1176,20 @@
             <div class="related-products-grid">
                 <div class="related-product-item">
                     <div class="product-image">
-                        <img src="imge/sac.png" alt="Gucci Sac à main">
+                        <img src="imge/sac.png" alt="Bottega Veneta Cassette">
                     </div>
-                    <h4 class="product-name">Gucci Sac à main</h4>
-                    <p class="product-price">8500 MAD</p>
-                    <a href="gucci-sac.html" class="product-buy-btn">عرض التفاصيل</a>
+                    <h4 class="product-name">Bottega Veneta Cassette</h4>
+                    <p class="product-price">15,500 MAD</p>
+                    <a href="bottega-sac.html" class="product-buy-btn">عرض التفاصيل</a>
                 </div>
 
                 <div class="related-product-item">
                     <div class="product-image">
-                        <img src="imge/sac.png" alt="LV Sac à dos">
+                        <img src="imge/sac.png" alt="Gucci Sac à main">
                     </div>
-                    <h4 class="product-name">LV Sac à dos</h4>
-                    <p class="product-price">12000 MAD</p>
-                    <a href="lv-sac.html" class="product-buy-btn">عرض التفاصيل</a>
+                    <h4 class="product-name">Gucci Sac à main</h4>
+                    <p class="product-price">9,500 MAD</p>
+                    <a href="gucci-sac.html" class="product-buy-btn">عرض التفاصيل</a>
                 </div>
             </div>
         </div>
@@ -163,6 +1197,29 @@
         <div class="footer">
             تم التطوير بكل حب ❤️ | 2026
         </div>
+    </div>
+
+    <!-- Mobile Sticky Purchase Bar -->
+    <div class="mobile-sticky-purchase" id="mobileStickyPurchase">
+        <div class="sticky-product-info">
+            <img src="imge/sac.png" alt="Prada Re-Edition" class="sticky-product-image">
+            <div class="sticky-product-details">
+                <span class="sticky-product-name">Prada Re-Edition</span>
+                <span class="sticky-product-price">15,500 MAD</span>
+            </div>
+        </div>
+        <button class="sticky-order-button" onclick="scrollToPurchaseBox()">
+            <i class="fas fa-shopping-bag"></i> طلب الآن
+        </button>
+    </div>
+
+    <!-- Floating Purchase Button -->
+    <div class="purchase-float" onclick="scrollToPurchaseBox()" title="اطلب الآن">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
     </div>
 
     <!-- زر واتساب العائم -->
@@ -195,6 +1252,105 @@
             mainImage.src = thumbnail.src;
             mainImage.alt = thumbnail.alt;
         }
+
+        // FAQ toggle function
+        function toggleFAQ(question) {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.classList.remove('fa-minus-circle');
+                icon.classList.add('fa-question-circle');
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('active'));
+                document.querySelectorAll('.faq-question i').forEach(ic => {
+                    ic.classList.remove('fa-minus-circle');
+                    ic.classList.add('fa-question-circle');
+                });
+
+                answer.classList.add('active');
+                icon.classList.remove('fa-question-circle');
+                icon.classList.add('fa-minus-circle');
+            }
+        }
+
+        // Back to top functionality
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Variant selection functionality
+        function selectVariant(option) {
+            // Remove active class from all variants
+            document.querySelectorAll('.variant-option').forEach(variant => {
+                variant.classList.remove('active');
+                variant.innerHTML = '<i class="fas fa-circle"></i> ' + variant.textContent.trim();
+            });
+
+            // Add active class to selected variant
+            option.classList.add('active');
+            option.innerHTML = '<i class="fas fa-check-circle"></i> ' + option.textContent.trim();
+        }
+
+        // Form submission functionality
+        function submitOrder(event) {
+            event.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+
+            // Create order summary
+            const orderSummary = `
+                طلب جديد:
+                - المنتج: Prada Re-Edition
+                - الاسم: ${fullName}
+                - الهاتف: ${phone}
+                - المدينة: ${city}
+                - السعر: 15,500 MAD
+            `;
+
+            // Show success message
+            alert('شكرًا لك! تم استلام طلبك وسيتم التواصل معك قريبًا لتأكيد التفاصيل.');
+
+            // In a real implementation, you would send this data to your server
+            console.log('Order submitted:', orderSummary);
+
+            // Reset form
+            document.getElementById('luxuryOrderForm').reset();
+        }
+
+        // Scroll to purchase box function
+        function scrollToPurchaseBox() {
+            const purchaseBox = document.querySelector('.luxury-purchase-box');
+            if (purchaseBox) {
+                purchaseBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Mobile sticky purchase bar functionality
+        window.addEventListener('scroll', function() {
+            const stickyBar = document.getElementById('mobileStickyPurchase');
+            if (window.innerWidth <= 768) { // Only show on mobile
+                if (window.scrollY > 300) {
+                    stickyBar.classList.add('show');
+                } else {
+                    stickyBar.classList.remove('show');
+                }
+            }
+        });
     </script>
 </body>
 </html>
