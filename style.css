@@ -332,10 +332,11 @@ p {
 
 .related-product-item .product-image {
     width: 100%;
-    height: 180px;
+    height: 100%;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .related-product-item .product-image img {
@@ -343,6 +344,9 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .related-product-item .product-name {
@@ -1270,13 +1274,14 @@ p {
     padding-bottom: 0;
 }
 
-.product-image {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 12px;
-}
+    .product-image {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        position: relative;
+    }
 
 .products-grid {
     display: grid;
@@ -1327,10 +1332,11 @@ p {
 
 .best-product-image {
     width: 100%;
-    height: 220px;
+     height: 220px;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 0;
+    position: relative;
 }
 
 .best-product-info {
@@ -1348,6 +1354,9 @@ p {
     object-fit: cover;
     object-position: center;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .best-product-card h3 {
@@ -1400,6 +1409,9 @@ p {
     object-fit: cover;
     object-position: center;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .product-name {
@@ -1465,9 +1477,9 @@ p {
     }
 
     .best-products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
 
     .best-product-card {
         min-height: auto;
@@ -1475,7 +1487,7 @@ p {
     }
 
     .best-product-image {
-        height: 220px;
+        height: 180px;
     }
 
     .collections-container {
@@ -1594,7 +1606,7 @@ p {
 /* Collection Banner */
 .collection-banner {
     width: 100%;
-    height: 210px;
+    height: 100%;
     border-radius: 14px 14px 0 0;
     overflow: hidden;
     margin-bottom: 15px;
@@ -1604,9 +1616,12 @@ p {
 .collection-banner img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .collection-content {
     flex: 1;
