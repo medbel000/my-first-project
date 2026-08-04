@@ -341,7 +341,7 @@ p {
 .related-product-item .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -1276,9 +1276,6 @@ p {
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .products-grid {
@@ -1331,9 +1328,6 @@ p {
 .best-product-image {
     width: 100%;
     height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 0;
@@ -1351,7 +1345,7 @@ p {
 .best-product-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
 }
@@ -1403,7 +1397,7 @@ p {
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
 }
@@ -1481,7 +1475,7 @@ p {
     }
 
     .best-product-image {
-        height: 180px;
+        height: 220px;
     }
 
     .collections-container {
